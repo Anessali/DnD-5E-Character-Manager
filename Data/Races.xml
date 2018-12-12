@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Races>
+    <Race Name="Dwarf">
+        <Subraces>
+            <Name Type="SubRace">Mountain Dwarf</Name>
+        </Subraces>
+    </Race>
+    <Race Name="Elf">
+        <Subraces>
+            <Name Type="SubRace">Wood Elf</Name>
+        </Subraces>
+    </Race>
+</Races>

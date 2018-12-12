@@ -1,0 +1,24 @@
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csprojAssemblyReference.cache
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.Properties.Resources.resources
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csproj.GenerateResource.cache
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.exe.config
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.exe
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.pdb
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.exe
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.pdb
+C:\Users\Shiro\Source\repos\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.Main.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.exe.config
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.exe
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.pdb
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csprojAssemblyReference.cache
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.Main.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.Properties.Resources.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csproj.GenerateResource.cache
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.exe
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.pdb
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\Data\CharacterSheets\Example.xml
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\Data\Settings.xml
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.DiceRolls.DiceMessageBox.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\Data\Races.xml

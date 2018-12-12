@@ -1,0 +1,9 @@
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Release\CharacterSheet.exe.config
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Release\CharacterSheet.exe
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Release\CharacterSheet.pdb
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.Main.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.Properties.Resources.resources
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.csproj.GenerateResource.cache
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.csproj.CoreCompileInputs.cache
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.exe
+C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.pdb
