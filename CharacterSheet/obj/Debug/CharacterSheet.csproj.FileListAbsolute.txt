@@ -22,7 +22,6 @@ C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\Data\Settings.xml
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Debug\CharacterSheet.DiceRolls.DiceMessageBox.resources
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\bin\Debug\Data\Races.xml
-C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\Data\CharacterSheets\Example.xml
 C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\Data\Races.xml
 C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\Data\Settings.xml
 C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheet.exe.config
@@ -50,3 +49,4 @@ C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Charact
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.exe
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.pdb
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\CharacterSheets\Example.xml
+C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheets\Example.xml

@@ -71,9 +71,9 @@ namespace CharacterSheet
         private void Main_Load(object sender, EventArgs e)
         {
             XElement racesFile = XElement.Load("Data/Races.xml");
-            IEnumerable<string> races =
+            IEnumerable<XElement> races =
                 from race in racesFile.Descendants("Race")
-                select race.Attribute("Name").Value
+                select race.Element("Name")
                 ;
             foreach (string race in races)
             {
@@ -83,16 +83,22 @@ namespace CharacterSheet
 
         private void cbBoxRace_TextChanged(object sender, EventArgs e)
         {
+            //First clears the combo box
+            cbBoxSubrace.Items.Clear();
+
+            //MessageBox.Show("Test");
             XElement racesFile = XElement.Load("Data/Races.xml");
             //Incomplete
-            IEnumerable<string> races =
-                from race in racesFile.Descendants("SubRaces")
-                //where race.Parent.Attribute("Name").Value == cbBoxRace.Text
-                select race.Attribute("Name").Value
+            IEnumerable<XElement> races =
+                from race in racesFile.Elements("Race")
+                where (string)race.Attribute("Name") == cbBoxRace.Text
+                select race
                 ;
+
             foreach (string race in races)
             {
-                cbBoxRace.Items.Add(race);
+                //cbBoxSubrace.Items.Add(race);
+                MessageBox.Show(race);
             }
         }
     }

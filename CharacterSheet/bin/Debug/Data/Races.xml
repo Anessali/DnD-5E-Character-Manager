@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Races>
     <Race Name="Dwarf">
+        <Name>Dwarf</Name>
         <Subraces>
-            <SubRace Name="Mountain Dwarf"></SubRace>
+            <SubRace SubRaceOf="Dwarf">
+                <SName>Mountain Dwarf</SName>
+            </SubRace>
         </Subraces>
     </Race>
     <Race Name="Elf">
+        <Name>Elf</Name>
         <Subraces>
-            <SubRace Name="Wood Elf"></SubRace>
+            <SubRace SubRaceOf="Elf">
+                <SName>Wood Elf</SName>
+            </SubRace>
         </Subraces>
     </Race>
 </Races>

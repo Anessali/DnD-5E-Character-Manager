@@ -43,10 +43,10 @@
             this.d4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbBoxRace = new System.Windows.Forms.ComboBox();
             this.cbBoxSubrace = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbBoxRace = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.charSheetMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -179,14 +179,23 @@
             this.tabPage1.Text = "Character";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // cbBoxSubrace
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Race:";
+            this.cbBoxSubrace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBoxSubrace.FormattingEnabled = true;
+            this.cbBoxSubrace.Location = new System.Drawing.Point(99, 136);
+            this.cbBoxSubrace.Name = "cbBoxSubrace";
+            this.cbBoxSubrace.Size = new System.Drawing.Size(121, 28);
+            this.cbBoxSubrace.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Subrace:";
             // 
             // cbBoxRace
             // 
@@ -198,24 +207,14 @@
             this.cbBoxRace.TabIndex = 1;
             this.cbBoxRace.TextChanged += new System.EventHandler(this.cbBoxRace_TextChanged);
             // 
-            // cbBoxSubrace
+            // label1
             // 
-            this.cbBoxSubrace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBoxSubrace.FormattingEnabled = true;
-            this.cbBoxSubrace.Location = new System.Drawing.Point(99, 136);
-            this.cbBoxSubrace.Name = "cbBoxSubrace";
-            this.cbBoxSubrace.Size = new System.Drawing.Size(121, 28);
-            this.cbBoxSubrace.TabIndex = 3;
-            this.cbBoxSubrace.TextChanged += new System.EventHandler(this.Main_Load);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Subrace:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Race:";
             // 
             // Main
             // 
