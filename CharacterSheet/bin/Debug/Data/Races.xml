@@ -2,12 +2,12 @@
 <Races>
     <Race Name="Dwarf">
         <Subraces>
-            <Name Type="SubRace">Mountain Dwarf</Name>
+            <SubRace Name="Mountain Dwarf"></SubRace>
         </Subraces>
     </Race>
     <Race Name="Elf">
         <Subraces>
-            <Name Type="SubRace">Wood Elf</Name>
+            <SubRace Name="Wood Elf"></SubRace>
         </Subraces>
     </Race>
 </Races>

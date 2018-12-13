@@ -71,30 +71,28 @@ namespace CharacterSheet
         private void Main_Load(object sender, EventArgs e)
         {
             XElement racesFile = XElement.Load("Data/Races.xml");
-            //IEnumerable<string> races =
-            //    from rc in racesFile.Elements("Race").Descendants("Name")
-            //    where (string)rc.Attribute("Type") == "Race"
-            //    select (string)rc;
             IEnumerable<string> races =
-                from rc in racesFile.Elements("Race").Descendants("Name")
-                where (string)rc.Attribute("Type") == "Race"
-                select (string)rc;
-            foreach (string rc in races)
+                from race in racesFile.Descendants("Race")
+                select race.Attribute("Name").Value
+                ;
+            foreach (string race in races)
             {
-                cbBoxRace.Items.Add(rc);
+                cbBoxRace.Items.Add(race);
             }
         }
 
         private void cbBoxRace_TextChanged(object sender, EventArgs e)
         {
             XElement racesFile = XElement.Load("Data/Races.xml");
+            //Incomplete
             IEnumerable<string> races =
-                from rc in racesFile.Elements("Race").Descendants("SubRace")
-                where (string)rc.Attribute("Type") == "SubRace"
-                select (string)rc;
-            foreach (string rc in races)
+                from race in racesFile.Descendants("SubRaces")
+                //where race.Parent.Attribute("Name").Value == cbBoxRace.Text
+                select race.Attribute("Name").Value
+                ;
+            foreach (string race in races)
             {
-                cbBoxRace.Items.Add(rc);
+                cbBoxRace.Items.Add(race);
             }
         }
     }
