@@ -4,4 +4,5 @@ Software that will generate character sheets and then display them. Currently in
 ## Planned features
 - [ ] Character generation
 - [x] Dice rolling
+- [ ] Set attributes
 - [ ] Select rule books used
