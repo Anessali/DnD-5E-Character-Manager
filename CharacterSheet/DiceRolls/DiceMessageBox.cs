@@ -21,8 +21,8 @@ namespace CharacterSheet.DiceRolls
         /// roll refers to the dice roll. maxRoll is the maximum possible;
         /// for example, a D20 has a maxRoll of 20.
         /// </summary>
-        /// <param name="roll"></param>
-        /// <param name="maxRoll"></param>
+        /// <param name="rolls"></param>
+        /// <param name="maxRolls"></param>
         public DiceMessageBox(List<int> rolls, List<int> maxRolls)
         {
             this.Icon = CharacterSheet.Properties.Resources.d20_icon_34412_Windows;

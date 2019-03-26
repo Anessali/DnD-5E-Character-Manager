@@ -22,7 +22,7 @@ namespace CharacterSheet
             wis,
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
-        DnDataSetDataContext dataCon = new DnDataSetDataContext();
+        readonly DnDataSetDataContext dataCon = new DnDataSetDataContext();
         Dice dice;
 
         #region Constructors

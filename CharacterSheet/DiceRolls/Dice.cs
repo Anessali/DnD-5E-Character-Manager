@@ -9,9 +9,9 @@ namespace CharacterSheet
 {
     class Dice
     {
-        List<int> diceList = new List<int>();
-        List<int> diceRolls = new List<int>();
-        Random rnd = new Random();
+        readonly List<int> diceList = new List<int>();
+        readonly List<int> diceRolls = new List<int>();
+        readonly Random rnd = new Random();
 
         /// <summary>
         /// Single dice constructor

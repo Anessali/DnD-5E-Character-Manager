@@ -16,5 +16,13 @@
     <Subrace Type="Elf">
         <Name>Wood Elf</Name>
     </Subrace>
-    
+
+    <Subrace Type="Dragonborn">
+        <Name>Black Dragonborn</Name>
+    </Subrace>
+
+    <Subrace Type="Dragonborn">
+        <Name>Gold Dragonborn</Name>
+    </Subrace>
+
 </RaceContainer>
