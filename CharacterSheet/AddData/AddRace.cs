@@ -12,6 +12,7 @@ namespace CharacterSheet.AddData
 {
     public partial class AddRace : Form
     {
+        
         public AddRace()
         {
             InitializeComponent();
@@ -20,6 +21,11 @@ namespace CharacterSheet.AddData
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

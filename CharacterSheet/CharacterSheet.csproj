@@ -87,10 +87,8 @@
     <Compile Include="DiceRolls\DiceMessageBox.Designer.cs">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="DnDataDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    <Compile Include="DnDataSet.cs">
+      <DependentUpon>DnDataSet.dbml</DependentUpon>
     </Compile>
     <Compile Include="DnDataSet.designer.cs">
       <AutoGen>True</AutoGen>
@@ -149,17 +147,6 @@
     <EmbeddedResource Include="StatWindows\SetAttributes.resx">
       <DependentUpon>SetAttributes.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DnDataDataSet.xsc">
-      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DnDataDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DnDataDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DnDataDataSet.xss">
-      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
-    </None>
     <None Include="DnDataSet.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DnDataSet.designer.cs</LastGenOutput>

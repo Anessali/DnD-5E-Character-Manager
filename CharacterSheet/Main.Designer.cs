@@ -81,7 +81,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
-            this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
             this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attributeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.charSheetMenu.SuspendLayout();
@@ -98,7 +97,6 @@
             this.panel1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -633,16 +631,6 @@
             this.dGridInventory.Size = new System.Drawing.Size(548, 388);
             this.dGridInventory.TabIndex = 0;
             // 
-            // dnDataDataSet
-            // 
-            this.dnDataDataSet.DataSetName = "DnDataDataSet";
-            this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dnDataDataSetBindingSource
-            // 
-            this.dnDataDataSetBindingSource.DataSource = this.dnDataDataSet;
-            this.dnDataDataSetBindingSource.Position = 0;
-            // 
             // attributeToolStripMenuItem
             // 
             this.attributeToolStripMenuItem.Name = "attributeToolStripMenuItem";
@@ -680,7 +668,6 @@
             this.panel1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -742,7 +729,6 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView dGridInventory;
         private System.Windows.Forms.BindingSource dnDataDataSetBindingSource;
-        private DnDataDataSet dnDataDataSet;
         private System.Windows.Forms.ToolStripMenuItem attributeToolStripMenuItem;
     }
 }
