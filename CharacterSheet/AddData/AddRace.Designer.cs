@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtCha = new System.Windows.Forms.TextBox();
-            this.txtWis = new System.Windows.Forms.TextBox();
-            this.txtInt = new System.Windows.Forms.TextBox();
-            this.txtCon = new System.Windows.Forms.TextBox();
-            this.txtDex = new System.Windows.Forms.TextBox();
-            this.txtStr = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +40,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAccept = new System.Windows.Forms.Button();
+            this.txtStr = new System.Windows.Forms.NumericUpDown();
+            this.txtDex = new System.Windows.Forms.NumericUpDown();
+            this.txtInt = new System.Windows.Forms.NumericUpDown();
+            this.txtCon = new System.Windows.Forms.NumericUpDown();
+            this.txtCha = new System.Windows.Forms.NumericUpDown();
+            this.txtWis = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDex)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWis)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,60 +64,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "New Race Name:";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(184, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // txtCha
-            // 
-            this.txtCha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCha.Location = new System.Drawing.Point(157, 291);
-            this.txtCha.Name = "txtCha";
-            this.txtCha.Size = new System.Drawing.Size(127, 26);
-            this.txtCha.TabIndex = 25;
-            // 
-            // txtWis
-            // 
-            this.txtWis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWis.Location = new System.Drawing.Point(157, 254);
-            this.txtWis.Name = "txtWis";
-            this.txtWis.Size = new System.Drawing.Size(127, 26);
-            this.txtWis.TabIndex = 24;
-            // 
-            // txtInt
-            // 
-            this.txtInt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInt.Location = new System.Drawing.Point(157, 217);
-            this.txtInt.Name = "txtInt";
-            this.txtInt.Size = new System.Drawing.Size(127, 26);
-            this.txtInt.TabIndex = 23;
-            // 
-            // txtCon
-            // 
-            this.txtCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCon.Location = new System.Drawing.Point(157, 180);
-            this.txtCon.Name = "txtCon";
-            this.txtCon.Size = new System.Drawing.Size(127, 26);
-            this.txtCon.TabIndex = 22;
-            // 
-            // txtDex
-            // 
-            this.txtDex.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDex.Location = new System.Drawing.Point(157, 143);
-            this.txtDex.Name = "txtDex";
-            this.txtDex.Size = new System.Drawing.Size(127, 26);
-            this.txtDex.TabIndex = 21;
-            // 
-            // txtStr
-            // 
-            this.txtStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStr.Location = new System.Drawing.Point(157, 106);
-            this.txtStr.Name = "txtStr";
-            this.txtStr.Size = new System.Drawing.Size(127, 26);
-            this.txtStr.TabIndex = 20;
+            this.txtName.Location = new System.Drawing.Point(151, 24);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(133, 26);
+            this.txtName.TabIndex = 1;
             // 
             // label6
             // 
@@ -220,32 +178,140 @@
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
+            // txtStr
+            // 
+            this.txtStr.Location = new System.Drawing.Point(157, 107);
+            this.txtStr.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtStr.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtStr.Name = "txtStr";
+            this.txtStr.Size = new System.Drawing.Size(120, 26);
+            this.txtStr.TabIndex = 28;
+            // 
+            // txtDex
+            // 
+            this.txtDex.Location = new System.Drawing.Point(157, 144);
+            this.txtDex.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtDex.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtDex.Name = "txtDex";
+            this.txtDex.Size = new System.Drawing.Size(120, 26);
+            this.txtDex.TabIndex = 29;
+            // 
+            // txtInt
+            // 
+            this.txtInt.Location = new System.Drawing.Point(157, 220);
+            this.txtInt.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtInt.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtInt.Name = "txtInt";
+            this.txtInt.Size = new System.Drawing.Size(120, 26);
+            this.txtInt.TabIndex = 31;
+            // 
+            // txtCon
+            // 
+            this.txtCon.Location = new System.Drawing.Point(157, 183);
+            this.txtCon.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtCon.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtCon.Name = "txtCon";
+            this.txtCon.Size = new System.Drawing.Size(120, 26);
+            this.txtCon.TabIndex = 30;
+            // 
+            // txtCha
+            // 
+            this.txtCha.Location = new System.Drawing.Point(157, 294);
+            this.txtCha.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtCha.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtCha.Name = "txtCha";
+            this.txtCha.Size = new System.Drawing.Size(120, 26);
+            this.txtCha.TabIndex = 33;
+            // 
+            // txtWis
+            // 
+            this.txtWis.Location = new System.Drawing.Point(157, 257);
+            this.txtWis.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtWis.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.txtWis.Name = "txtWis";
+            this.txtWis.Size = new System.Drawing.Size(120, 26);
+            this.txtWis.TabIndex = 32;
+            // 
             // AddRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 404);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCha);
             this.Controls.Add(this.txtWis);
             this.Controls.Add(this.txtInt);
             this.Controls.Add(this.txtCon);
             this.Controls.Add(this.txtDex);
             this.Controls.Add(this.txtStr);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddRace";
             this.Text = "AddRace";
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtStr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDex)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,13 +320,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtCha;
-        private System.Windows.Forms.TextBox txtWis;
-        private System.Windows.Forms.TextBox txtInt;
-        private System.Windows.Forms.TextBox txtCon;
-        private System.Windows.Forms.TextBox txtDex;
-        private System.Windows.Forms.TextBox txtStr;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -271,5 +331,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAccept;
+        private System.Windows.Forms.NumericUpDown txtStr;
+        private System.Windows.Forms.NumericUpDown txtDex;
+        private System.Windows.Forms.NumericUpDown txtInt;
+        private System.Windows.Forms.NumericUpDown txtCon;
+        private System.Windows.Forms.NumericUpDown txtCha;
+        private System.Windows.Forms.NumericUpDown txtWis;
     }
 }

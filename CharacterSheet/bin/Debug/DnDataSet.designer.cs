@@ -33,6 +33,9 @@ namespace CharacterSheet
     partial void InsertInventory(Inventory instance);
     partial void UpdateInventory(Inventory instance);
     partial void DeleteInventory(Inventory instance);
+    partial void InsertRace(Race instance);
+    partial void UpdateRace(Race instance);
+    partial void DeleteRace(Race instance);
     #endregion
 		
 		public DnDataSetDataContext() : 
@@ -70,6 +73,14 @@ namespace CharacterSheet
 			get
 			{
 				return this.GetTable<Inventory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Race> Races
+		{
+			get
+			{
+				return this.GetTable<Race>();
 			}
 		}
 	}
@@ -207,6 +218,356 @@ namespace CharacterSheet
 					this._Type = value;
 					this.SendPropertyChanged("Type");
 					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Races")]
+	public partial class Race : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Speed;
+		
+		private System.Nullable<int> _Strength;
+		
+		private System.Nullable<int> _Dexterity;
+		
+		private System.Nullable<int> _Constitution;
+		
+		private System.Nullable<int> _Intelligence;
+		
+		private System.Nullable<int> _Wisdom;
+		
+		private System.Nullable<int> _Charisma;
+		
+		private string _Trait1;
+		
+		private string _Trait2;
+		
+		private string _Trait3;
+		
+		private string _Trait4;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSpeedChanging(System.Nullable<int> value);
+    partial void OnSpeedChanged();
+    partial void OnStrengthChanging(System.Nullable<int> value);
+    partial void OnStrengthChanged();
+    partial void OnDexterityChanging(System.Nullable<int> value);
+    partial void OnDexterityChanged();
+    partial void OnConstitutionChanging(System.Nullable<int> value);
+    partial void OnConstitutionChanged();
+    partial void OnIntelligenceChanging(System.Nullable<int> value);
+    partial void OnIntelligenceChanged();
+    partial void OnWisdomChanging(System.Nullable<int> value);
+    partial void OnWisdomChanged();
+    partial void OnCharismaChanging(System.Nullable<int> value);
+    partial void OnCharismaChanged();
+    partial void OnTrait1Changing(string value);
+    partial void OnTrait1Changed();
+    partial void OnTrait2Changing(string value);
+    partial void OnTrait2Changed();
+    partial void OnTrait3Changing(string value);
+    partial void OnTrait3Changed();
+    partial void OnTrait4Changing(string value);
+    partial void OnTrait4Changed();
+    #endregion
+		
+		public Race()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Speed", DbType="Int")]
+		public System.Nullable<int> Speed
+		{
+			get
+			{
+				return this._Speed;
+			}
+			set
+			{
+				if ((this._Speed != value))
+				{
+					this.OnSpeedChanging(value);
+					this.SendPropertyChanging();
+					this._Speed = value;
+					this.SendPropertyChanged("Speed");
+					this.OnSpeedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Strength", DbType="Int")]
+		public System.Nullable<int> Strength
+		{
+			get
+			{
+				return this._Strength;
+			}
+			set
+			{
+				if ((this._Strength != value))
+				{
+					this.OnStrengthChanging(value);
+					this.SendPropertyChanging();
+					this._Strength = value;
+					this.SendPropertyChanged("Strength");
+					this.OnStrengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dexterity", DbType="Int")]
+		public System.Nullable<int> Dexterity
+		{
+			get
+			{
+				return this._Dexterity;
+			}
+			set
+			{
+				if ((this._Dexterity != value))
+				{
+					this.OnDexterityChanging(value);
+					this.SendPropertyChanging();
+					this._Dexterity = value;
+					this.SendPropertyChanged("Dexterity");
+					this.OnDexterityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Constitution", DbType="Int")]
+		public System.Nullable<int> Constitution
+		{
+			get
+			{
+				return this._Constitution;
+			}
+			set
+			{
+				if ((this._Constitution != value))
+				{
+					this.OnConstitutionChanging(value);
+					this.SendPropertyChanging();
+					this._Constitution = value;
+					this.SendPropertyChanged("Constitution");
+					this.OnConstitutionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Intelligence", DbType="Int")]
+		public System.Nullable<int> Intelligence
+		{
+			get
+			{
+				return this._Intelligence;
+			}
+			set
+			{
+				if ((this._Intelligence != value))
+				{
+					this.OnIntelligenceChanging(value);
+					this.SendPropertyChanging();
+					this._Intelligence = value;
+					this.SendPropertyChanged("Intelligence");
+					this.OnIntelligenceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wisdom", DbType="Int")]
+		public System.Nullable<int> Wisdom
+		{
+			get
+			{
+				return this._Wisdom;
+			}
+			set
+			{
+				if ((this._Wisdom != value))
+				{
+					this.OnWisdomChanging(value);
+					this.SendPropertyChanging();
+					this._Wisdom = value;
+					this.SendPropertyChanged("Wisdom");
+					this.OnWisdomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Charisma", DbType="Int")]
+		public System.Nullable<int> Charisma
+		{
+			get
+			{
+				return this._Charisma;
+			}
+			set
+			{
+				if ((this._Charisma != value))
+				{
+					this.OnCharismaChanging(value);
+					this.SendPropertyChanging();
+					this._Charisma = value;
+					this.SendPropertyChanged("Charisma");
+					this.OnCharismaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait1", DbType="NChar(10)")]
+		public string Trait1
+		{
+			get
+			{
+				return this._Trait1;
+			}
+			set
+			{
+				if ((this._Trait1 != value))
+				{
+					this.OnTrait1Changing(value);
+					this.SendPropertyChanging();
+					this._Trait1 = value;
+					this.SendPropertyChanged("Trait1");
+					this.OnTrait1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait2", DbType="NChar(10)")]
+		public string Trait2
+		{
+			get
+			{
+				return this._Trait2;
+			}
+			set
+			{
+				if ((this._Trait2 != value))
+				{
+					this.OnTrait2Changing(value);
+					this.SendPropertyChanging();
+					this._Trait2 = value;
+					this.SendPropertyChanged("Trait2");
+					this.OnTrait2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait3", DbType="NChar(10)")]
+		public string Trait3
+		{
+			get
+			{
+				return this._Trait3;
+			}
+			set
+			{
+				if ((this._Trait3 != value))
+				{
+					this.OnTrait3Changing(value);
+					this.SendPropertyChanging();
+					this._Trait3 = value;
+					this.SendPropertyChanged("Trait3");
+					this.OnTrait3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait4", DbType="NChar(10)")]
+		public string Trait4
+		{
+			get
+			{
+				return this._Trait4;
+			}
+			set
+			{
+				if ((this._Trait4 != value))
+				{
+					this.OnTrait4Changing(value);
+					this.SendPropertyChanging();
+					this._Trait4 = value;
+					this.SendPropertyChanged("Trait4");
+					this.OnTrait4Changed();
 				}
 			}
 		}

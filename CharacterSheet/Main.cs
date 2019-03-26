@@ -22,7 +22,7 @@ namespace CharacterSheet
             wis,
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
-        readonly DnDataSetDataContext dataCon = new DnDataSetDataContext();
+        readonly DnDataSetDataContext dataConn = new DnDataSetDataContext();
         Dice dice;
 
         #region Constructors
@@ -46,7 +46,7 @@ namespace CharacterSheet
 
         public void LoadInventory()
         {
-            dGridInventory.DataSource = dataCon.Inventories;
+            dGridInventory.DataSource = dataConn.Inventories;
             dGridInventory.Columns["Id"].Visible = false;
             dGridInventory.Columns[1].Width = 200;
             dGridInventory.Columns[2].Width = 400;
@@ -154,7 +154,12 @@ namespace CharacterSheet
             newSubrace.Show();
         }
 
-        
+        private void editRacesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         /// <summary>
         /// Loads data in Races.xml

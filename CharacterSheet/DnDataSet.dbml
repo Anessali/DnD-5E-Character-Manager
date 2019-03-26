@@ -9,4 +9,21 @@
       <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Races" Member="Races">
+    <Type Name="Race">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Strength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dexterity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Constitution" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Intelligence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Wisdom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charisma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Trait1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait3" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait4" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
