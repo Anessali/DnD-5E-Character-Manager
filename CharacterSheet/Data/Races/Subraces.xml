@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<RaceContainer>
+   
+    <Subrace Type="Dwarf">
+        <Name>Hill Dwarf</Name>
+    </Subrace>
+    
+    <Subrace Type="Dwarf">
+        <Name>Mountain Dwarf</Name>
+    </Subrace>
+    
+    <Subrace Type="Elf">
+        <Name>High Elf</Name>
+    </Subrace>
+    
+    <Subrace Type="Elf">
+        <Name>Wood Elf</Name>
+    </Subrace>
+    
+</RaceContainer>

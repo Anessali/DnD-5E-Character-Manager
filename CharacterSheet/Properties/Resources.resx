@@ -121,4 +121,7 @@
   <data name="d20_icon_34412_Windows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d20-icon-34412-Windows.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Iconcubic_Dnd_Dice_D12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Iconcubic-Dnd-Dice-D12.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

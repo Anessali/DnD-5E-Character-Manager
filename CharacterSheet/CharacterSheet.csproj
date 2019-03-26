@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,12 +62,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddData\AddRace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddData\AddRace.Designer.cs">
+      <DependentUpon>AddRace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddData\AddSubrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddData\AddSubrace.Designer.cs">
+      <DependentUpon>AddSubrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiceRolls\AttributeGeneration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiceRolls\AttributeGeneration.Designer.cs">
+      <DependentUpon>AttributeGeneration.cs</DependentUpon>
+    </Compile>
     <Compile Include="DiceRolls\Dice.cs" />
     <Compile Include="DiceRolls\DiceMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DiceRolls\DiceMessageBox.Designer.cs">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DnDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DnDataSet.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnDataSet.dbml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -61,6 +106,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatWindows\CharacterInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatWindows\CharacterInfo.Designer.cs">
+      <DependentUpon>CharacterInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatWindows\SetAttributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatWindows\SetAttributes.Designer.cs">
+      <DependentUpon>SetAttributes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddData\AddRace.resx">
+      <DependentUpon>AddRace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddData\AddSubrace.resx">
+      <DependentUpon>AddSubrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiceRolls\AttributeGeneration.resx">
+      <DependentUpon>AttributeGeneration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiceRolls\DiceMessageBox.resx">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +143,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StatWindows\CharacterInfo.resx">
+      <DependentUpon>CharacterInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatWindows\SetAttributes.resx">
+      <DependentUpon>SetAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DnDataDataSet.xsc">
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DnDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DnDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DnDataDataSet.xss">
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DnDataSet.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DnDataSet.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DnDataSet.dbml.layout">
+      <DependentUpon>DnDataSet.dbml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,17 +184,47 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CharacterSheets\Example.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Races.xml">
+    <Content Include="CharacterSheets\StartingPage.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\Classes\Classes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\Races\Races.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\Races\Subraces.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Settings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\DnData.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\DnData_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DnData.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\Iconcubic-Dnd-Dice-D12.ico" />
     <None Include="Resources\d20-icon-34412-Windows.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

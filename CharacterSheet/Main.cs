@@ -2,33 +2,79 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace CharacterSheet
 {
     public partial class Main : Form
     {
+        private int str,
+            dex,
+            con,
+            intel,
+            wis,
+            cha;
+        XElement settings = XElement.Load("Data/Settings.xml");
+        DnDataSetDataContext dataCon = new DnDataSetDataContext();
         Dice dice;
+
+        #region Constructors
         public Main()
         {
-            this.Icon = CharacterSheet.Properties.Resources.d20_icon_34412_Windows;
+            this.Icon = CharacterSheet.Properties.Resources.Iconcubic_Dnd_Dice_D12
+               ;
             InitializeComponent();
         }
-
-        public void AddRaces()
+        public Main(int str)
         {
-
+            this.str = str;
+        }
+        #endregion
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadRaces();
+            LoadCharacter();
+            LoadInventory();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        public void LoadInventory()
         {
-            this.Close();
+            dGridInventory.DataSource = dataCon.Inventories;
+            dGridInventory.Columns["Id"].Visible = false;
+            dGridInventory.Columns[1].Width = 200;
+            dGridInventory.Columns[2].Width = 400;
         }
+
+        /// <summary>
+        /// Sets values on page set on another form
+        /// </summary>
+        public void ReloadData()
+        {
+            //lblStr.Text = 20.ToString();
+            MessageBox.Show(str.ToString());
+            lblStr.Text = str.ToString();
+        }
+
+        #region Getters/setters for attributes
+        public int Str {
+            get { return str; }
+            set { str = value; }
+        }
+
+        
+        public int Dex { get => dex; set => dex = value; }
+        public int Con { get => con; set => con = value; }
+        public int Intel { get => intel; set => intel = value; }
+        public int Wis { get => wis; set => wis = value; }
+        public int Cha { get => cha; set => cha = value; }
+        #endregion
 
         #region Dice Rolling
         private void d20ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,11 +112,56 @@ namespace CharacterSheet
             dice = new Dice(4);
             dice.Roll();
         }
+
+        private void attributeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dice = new Dice(6, 6, 6, 6);
+            dice.Roll();
+        }
         #endregion
 
-        private void Main_Load(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            XElement racesFile = XElement.Load("Data/Races.xml");
+            this.Close();
+        }
+
+        /// <summary>
+        /// Loads data in character sheet
+        /// </summary>
+        public void LoadCharacter()
+        {
+            
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editCharacterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbBoxRace_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addSubraceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddData.AddSubrace newSubrace = new AddData.AddSubrace();
+            newSubrace.Show();
+        }
+
+        
+
+        /// <summary>
+        /// Loads data in Races.xml
+        /// </summary>
+        public void LoadRaces()
+        {
+            XElement racesFile = XElement.Load("Data/Races/Races.xml");
             IEnumerable<XElement> races =
                 from race in racesFile.Descendants("Race")
                 select race.Element("Name")
@@ -86,20 +177,41 @@ namespace CharacterSheet
             //First clears the combo box
             cbBoxSubrace.Items.Clear();
 
-            //MessageBox.Show("Test");
-            XElement racesFile = XElement.Load("Data/Races.xml");
-            //Incomplete
-            IEnumerable<XElement> races =
-                from race in racesFile.Elements("Race")
-                where (string)race.Attribute("Name") == cbBoxRace.Text
-                select race
-                ;
+            XElement racesFile = XElement.Load("Data/Races/Subraces.xml");
 
-            foreach (string race in races)
+            IEnumerable<XElement> subraces = 
+                from subrace in racesFile.Descendants("Subrace")
+                where (string)subrace.Attribute("Type") == cbBoxRace.Text
+                select subrace;
+
+            foreach (var subrace in subraces)
             {
-                //cbBoxSubrace.Items.Add(race);
-                MessageBox.Show(race);
+                cbBoxSubrace.Items.Add(subrace.Element("Name").Value);
             }
+
+        }
+
+        private void addRaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddData.AddRace newRace = new AddData.AddRace();
+            newRace.Show();
+        }
+
+        private void btnSetAttributes_Click(object sender, EventArgs e)
+        {
+            int str = Int32.Parse(lblStr.Text),
+                dex = Int32.Parse(lblDex.Text),
+                con = Int32.Parse(lblCon.Text),
+                intel = Int32.Parse(lblInt.Text),
+                wis = Int32.Parse(lblWis.Text),
+                cha = Int32.Parse(lblCha.Text);
+            StatWindows.SetAttributes newWindow = new StatWindows.SetAttributes(str, dex, con, intel, wis, cha);
+            newWindow.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReloadData();
         }
     }
 }

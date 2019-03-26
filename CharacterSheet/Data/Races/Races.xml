@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RaceContainer>
+   
+    <Race>
+        <Name>Dwarf</Name>
+        <SubRace>Hill</SubRace>
+        <SubRace>Mountain</SubRace>
+    </Race>
+    
+    <Race>
+        <Name>Elf</Name>
+		<SubRace>High</SubRace>
+        <SubRace>Wood</SubRace>
+    </Race>
+    
+</RaceContainer>

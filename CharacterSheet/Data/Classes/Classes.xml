@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ClassContainer>
+	
+	<Class>
+		<Name>Barbarian</Name>
+		<HitDie>d12</HitDie>
+	</Class>
+	<Class>
+		<Name>Bard</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Cleric</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Druid</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Fighter</Name>
+		<HitDie>d10</HitDie>
+	</Class>
+	<Class>
+		<Name>Monk</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Paladin</Name>
+		<HitDie>d10</HitDie>
+	</Class>
+	<Class>
+		<Name>Ranger</Name>
+		<HitDie>d10</HitDie>
+	</Class>
+	<Class>
+		<Name>Rogue</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Sorcerer</Name>
+		<HitDie>d6</HitDie>
+	</Class>
+	<Class>
+		<Name>Warlock</Name>
+		<HitDie>d8</HitDie>
+	</Class>
+	<Class>
+		<Name>Wizard</Name>
+		<HitDie>d6</HitDie>
+	</Class>
+	
+</ClassContainer>

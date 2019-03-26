@@ -7,3 +7,28 @@ C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Releas
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.csproj.CoreCompileInputs.cache
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.exe
 C:\Users\Shiro\Google Drive\Programming\CharacterSheet\CharacterSheet\obj\Release\CharacterSheet.pdb
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\CharacterSheets\StartingPage.xml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\Data\Races\Races.xml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\Data\Races\Subraces.xml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\Data\Settings.xml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\Data\DnData.mdf
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\Data\DnData_log.ldf
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\DnDataSet.designer.cs
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\DnDataSet.dbml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\DnDataSet.dbml.layout
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\CharacterSheet.exe.config
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\CharacterSheet.exe
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Release\CharacterSheet.pdb
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.csprojAssemblyReference.cache
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.AddData.AddRace.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.AddData.AddSubrace.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.DiceRolls.AttributeGeneration.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.DiceRolls.DiceMessageBox.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.Main.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.Properties.Resources.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.StatWindows.CharacterInfo.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.StatWindows.SetAttributes.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.csproj.GenerateResource.cache
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.csproj.CoreCompileInputs.cache
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.exe
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.pdb
