@@ -107,3 +107,4 @@ C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Char
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.exe
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.pdb
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.Races.resources
