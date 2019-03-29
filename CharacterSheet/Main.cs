@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
@@ -39,17 +40,12 @@ namespace CharacterSheet
         #endregion
         private void Main_Load(object sender, EventArgs e)
         {
-            LoadRaces();
-            LoadCharacter();
-            LoadInventory();
-        }
+            // TODO: This line of code loads data into the 'dnDataDataSet.Inventory' table. You can move, or remove it, as needed.
+            this.inventoryTableAdapter.Fill(this.dnDataDataSet.Inventory);
+            dGridTypeColumn.Sorted = true;
 
-        public void LoadInventory()
-        {
-            dGridInventory.DataSource = dataConn.Inventories;
-            dGridInventory.Columns["Id"].Visible = false;
-            dGridInventory.Columns[1].Width = 200;
-            dGridInventory.Columns[2].Width = 400;
+
+            LoadRaces();
         }
 
         /// <summary>
@@ -124,14 +120,7 @@ namespace CharacterSheet
         {
             this.Close();
         }
-
-        /// <summary>
-        /// Loads data in character sheet
-        /// </summary>
-        public void LoadCharacter()
-        {
-            
-        }
+        
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -161,6 +150,37 @@ namespace CharacterSheet
         }
 
 
+        #region Inventory DataGrid
+        private void btnUpdateTest_Click(object sender, EventArgs e)
+        {
+            //DataContext dc = new DataContext();
+            //Table<Inventory> inventory = dc.GetTable<Inventory>();
+            //var query = from inv in Inventory
+            //            where inv.Id == 13
+            //            select inv;
+
+            //foreach (var inv in query)
+            //{
+            //    MessageBox.Show($"id = {inv.Item}");
+            //}
+
+
+            //MessageBox.Show(dnDataDataSet.Inventory.DataSet.ToString());
+
+            
+        }
+
+        private void dGridInventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+        }
+
+        private void dGridInventory_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+        }
+
+        #endregion
 
         /// <summary>
         /// Loads data in Races.xml

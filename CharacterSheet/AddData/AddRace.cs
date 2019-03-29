@@ -62,7 +62,7 @@ namespace CharacterSheet.AddData
                     MessageBox.Show(exc.ToString());
                     //db.SubmitChanges();
                 }
-
+                
                 this.Close();
             }
         }

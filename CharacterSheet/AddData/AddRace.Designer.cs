@@ -162,7 +162,7 @@
             this.btnCancel.Location = new System.Drawing.Point(3, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 56);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -173,7 +173,7 @@
             this.btnAccept.Location = new System.Drawing.Point(163, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(154, 56);
-            this.btnAccept.TabIndex = 0;
+            this.btnAccept.TabIndex = 35;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
@@ -193,7 +193,7 @@
             -2147483648});
             this.txtStr.Name = "txtStr";
             this.txtStr.Size = new System.Drawing.Size(120, 26);
-            this.txtStr.TabIndex = 28;
+            this.txtStr.TabIndex = 2;
             // 
             // txtDex
             // 
@@ -210,7 +210,7 @@
             -2147483648});
             this.txtDex.Name = "txtDex";
             this.txtDex.Size = new System.Drawing.Size(120, 26);
-            this.txtDex.TabIndex = 29;
+            this.txtDex.TabIndex = 3;
             // 
             // txtInt
             // 
@@ -227,7 +227,7 @@
             -2147483648});
             this.txtInt.Name = "txtInt";
             this.txtInt.Size = new System.Drawing.Size(120, 26);
-            this.txtInt.TabIndex = 31;
+            this.txtInt.TabIndex = 5;
             // 
             // txtCon
             // 
@@ -244,7 +244,7 @@
             -2147483648});
             this.txtCon.Name = "txtCon";
             this.txtCon.Size = new System.Drawing.Size(120, 26);
-            this.txtCon.TabIndex = 30;
+            this.txtCon.TabIndex = 4;
             // 
             // txtCha
             // 
@@ -261,7 +261,7 @@
             -2147483648});
             this.txtCha.Name = "txtCha";
             this.txtCha.Size = new System.Drawing.Size(120, 26);
-            this.txtCha.TabIndex = 33;
+            this.txtCha.TabIndex = 7;
             // 
             // txtWis
             // 
@@ -278,7 +278,7 @@
             -2147483648});
             this.txtWis.Name = "txtWis";
             this.txtWis.Size = new System.Drawing.Size(120, 26);
-            this.txtWis.TabIndex = 32;
+            this.txtWis.TabIndex = 6;
             // 
             // AddRace
             // 

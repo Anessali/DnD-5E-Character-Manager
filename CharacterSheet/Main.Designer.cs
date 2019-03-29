@@ -38,7 +38,10 @@
             this.editCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addRaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.addSubraceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.d20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,11 +84,16 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnUpdateTest = new System.Windows.Forms.Button();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
+            this.dGridItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGridTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
             this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.editRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.inventoryTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.InventoryTableAdapter();
             this.charSheetMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,6 +108,8 @@
             this.panel1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,33 +174,50 @@
             // editCharacterToolStripMenuItem
             // 
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
-            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.editCharacterToolStripMenuItem.Text = "Edit Character";
             this.editCharacterToolStripMenuItem.Click += new System.EventHandler(this.editCharacterToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
             // 
             // addRaceToolStripMenuItem
             // 
             this.addRaceToolStripMenuItem.Name = "addRaceToolStripMenuItem";
-            this.addRaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addRaceToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addRaceToolStripMenuItem.Text = "Add Race";
             this.addRaceToolStripMenuItem.Click += new System.EventHandler(this.addRaceToolStripMenuItem_Click);
+            // 
+            // editRacesToolStripMenuItem
+            // 
+            this.editRacesToolStripMenuItem.Name = "editRacesToolStripMenuItem";
+            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editRacesToolStripMenuItem.Text = "Edit Races";
+            this.editRacesToolStripMenuItem.Click += new System.EventHandler(this.editRacesToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
             // 
             // addSubraceToolStripMenuItem
             // 
             this.addSubraceToolStripMenuItem.Name = "addSubraceToolStripMenuItem";
-            this.addSubraceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addSubraceToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addSubraceToolStripMenuItem.Text = "Add Subrace";
             this.addSubraceToolStripMenuItem.Click += new System.EventHandler(this.addSubraceToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
             // 
             // addClassToolStripMenuItem
             // 
             this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
-            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addClassToolStripMenuItem.Text = "Add Class";
             // 
             // rollToolStripMenuItem
@@ -626,6 +653,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnUpdateTest);
             this.tabPage5.Controls.Add(this.dGridInventory);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
@@ -635,31 +663,81 @@
             this.tabPage5.Text = "Inventory";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btnUpdateTest
+            // 
+            this.btnUpdateTest.Location = new System.Drawing.Point(205, 303);
+            this.btnUpdateTest.Name = "btnUpdateTest";
+            this.btnUpdateTest.Size = new System.Drawing.Size(128, 54);
+            this.btnUpdateTest.TabIndex = 1;
+            this.btnUpdateTest.Text = "Update";
+            this.btnUpdateTest.UseVisualStyleBackColor = true;
+            this.btnUpdateTest.Click += new System.EventHandler(this.btnUpdateTest_Click);
+            // 
             // dGridInventory
             // 
+            this.dGridInventory.AutoGenerateColumns = false;
+            this.dGridInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dGridInventory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dGridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dGridItemColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.dGridTypeColumn});
+            this.dGridInventory.DataSource = this.inventoryBindingSource;
             this.dGridInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGridInventory.Location = new System.Drawing.Point(3, 3);
             this.dGridInventory.Name = "dGridInventory";
+            this.dGridInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dGridInventory.Size = new System.Drawing.Size(548, 388);
             this.dGridInventory.TabIndex = 0;
+            this.dGridInventory.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellEndEdit);
+            this.dGridInventory.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellValueChanged);
             // 
-            // editRacesToolStripMenuItem
+            // dGridItemColumn
             // 
-            this.editRacesToolStripMenuItem.Name = "editRacesToolStripMenuItem";
-            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editRacesToolStripMenuItem.Text = "Edit Races";
-            this.editRacesToolStripMenuItem.Click += new System.EventHandler(this.editRacesToolStripMenuItem_Click);
+            this.dGridItemColumn.DataPropertyName = "Item";
+            this.dGridItemColumn.HeaderText = "Item";
+            this.dGridItemColumn.Name = "dGridItemColumn";
+            this.dGridItemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // toolStripSeparator2
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
-            // toolStripSeparator3
+            // quantityDataGridViewTextBoxColumn
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // dGridTypeColumn
+            // 
+            this.dGridTypeColumn.DataPropertyName = "Type";
+            this.dGridTypeColumn.HeaderText = "Type";
+            this.dGridTypeColumn.Items.AddRange(new object[] {
+            "Weapon",
+            "Item"});
+            this.dGridTypeColumn.Name = "dGridTypeColumn";
+            this.dGridTypeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGridTypeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // inventoryBindingSource
+            // 
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.dnDataDataSet;
+            // 
+            // dnDataDataSet
+            // 
+            this.dnDataDataSet.DataSetName = "DnDataDataSet";
+            this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inventoryTableAdapter
+            // 
+            this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -691,6 +769,8 @@
             this.panel1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -756,6 +836,14 @@
         private System.Windows.Forms.ToolStripMenuItem editRacesToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private DnDataDataSet dnDataDataSet;
+        private System.Windows.Forms.BindingSource inventoryBindingSource;
+        private DnDataDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dGridItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dGridTypeColumn;
+        private System.Windows.Forms.Button btnUpdateTest;
     }
 }
 

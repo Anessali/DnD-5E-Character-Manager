@@ -28,18 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dGridRaces = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.lstBxRaces = new System.Windows.Forms.ListView();
+            this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
+            this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.racesTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.RacesTableAdapter();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGridRaces)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -51,7 +61,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.lstBxRaces);
+            this.splitContainer1.Panel1.Controls.Add(this.dGridRaces);
             // 
             // splitContainer1.Panel2
             // 
@@ -59,6 +69,20 @@
             this.splitContainer1.Size = new System.Drawing.Size(348, 383);
             this.splitContainer1.SplitterDistance = 341;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // dGridRaces
+            // 
+            this.dGridRaces.AutoGenerateColumns = false;
+            this.dGridRaces.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGridRaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGridRaces.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn});
+            this.dGridRaces.DataSource = this.racesBindingSource;
+            this.dGridRaces.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGridRaces.Location = new System.Drawing.Point(0, 0);
+            this.dGridRaces.Name = "dGridRaces";
+            this.dGridRaces.Size = new System.Drawing.Size(348, 341);
+            this.dGridRaces.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -120,14 +144,30 @@
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // lstBxRaces
+            // dnDataDataSet
             // 
-            this.lstBxRaces.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstBxRaces.Location = new System.Drawing.Point(0, 0);
-            this.lstBxRaces.Name = "lstBxRaces";
-            this.lstBxRaces.Size = new System.Drawing.Size(348, 341);
-            this.lstBxRaces.TabIndex = 0;
-            this.lstBxRaces.UseCompatibleStateImageBehavior = false;
+            this.dnDataDataSet.DataSetName = "DnDataDataSet";
+            this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dnDataDataSetBindingSource
+            // 
+            this.dnDataDataSetBindingSource.DataSource = this.dnDataDataSet;
+            this.dnDataDataSetBindingSource.Position = 0;
+            // 
+            // racesBindingSource
+            // 
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dnDataDataSetBindingSource;
+            // 
+            // racesTableAdapter
+            // 
+            this.racesTableAdapter.ClearBeforeFill = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // Races
             // 
@@ -142,7 +182,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGridRaces)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,6 +199,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.ListView lstBxRaces;
+        private System.Windows.Forms.DataGridView dGridRaces;
+        private DnDataDataSet dnDataDataSet;
+        private System.Windows.Forms.BindingSource dnDataDataSetBindingSource;
+        private System.Windows.Forms.BindingSource racesBindingSource;
+        private DnDataDataSetTableAdapters.RacesTableAdapter racesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }

@@ -20,10 +20,8 @@ namespace CharacterSheet.Edit
 
         private void Races_Load(object sender, EventArgs e)
         {
-            //dGridRaces.DataSource = conn.Races;
-            //dGridRaces.Columns["Id"].Visible = false;
-
-            lstBxRaces.
+            // TODO: This line of code loads data into the 'dnDataDataSet.Races' table. You can move, or remove it, as needed.
+            this.racesTableAdapter.Fill(this.dnDataDataSet.Races);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

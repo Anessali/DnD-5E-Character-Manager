@@ -87,6 +87,11 @@
     <Compile Include="DiceRolls\DiceMessageBox.Designer.cs">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DnDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DnDataSet.cs">
       <DependentUpon>DnDataSet.dbml</DependentUpon>
     </Compile>
@@ -101,12 +106,6 @@
     </Compile>
     <Compile Include="Edit\Races.Designer.cs">
       <DependentUpon>Races.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Edit\Races2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit\Races2.Designer.cs">
-      <DependentUpon>Races2.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -143,9 +142,6 @@
     <EmbeddedResource Include="Edit\Races.resx">
       <DependentUpon>Races.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit\Races2.resx">
-      <DependentUpon>Races2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +161,17 @@
     <EmbeddedResource Include="StatWindows\SetAttributes.resx">
       <DependentUpon>SetAttributes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DnDataDataSet.xsc">
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DnDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DnDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DnDataDataSet.xss">
+      <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DnDataSet.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DnDataSet.designer.cs</LastGenOutput>
@@ -207,11 +214,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\DnData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\DnData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DnData.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Iconcubic-Dnd-Dice-D12.ico" />
     <None Include="Resources\d20-icon-34412-Windows.ico" />
