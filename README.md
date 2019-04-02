@@ -5,4 +5,4 @@ Software that will generate character sheets and then display them. Currently in
 [] Character generation
 [*] Dice rolling
 [] Select rule books used
-[] 
+[*] Inventory Management 
