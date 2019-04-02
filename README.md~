@@ -6,6 +6,7 @@ Most of the information is being stored in a local database unique to each user.
 Currently in an early alpha stage.
 
 ## Planned features
+<<<<<<< HEAD
 
 ### Main
 [] Character Generation
@@ -17,3 +18,9 @@ Currently in an early alpha stage.
 [x] Inventory Management
 [] Individual characters
 [] Inventory unique to each character 
+=======
+[] Character generation
+[*] Dice rolling
+[] Select rule books used
+[*] Inventory Management 
+>>>>>>> 90200f911ec6cb2dc2e9835799e3653cc868fa2d

@@ -6,6 +6,7 @@ Most of the information is being stored in a local database unique to each user.
 Currently in an early alpha stage.
 
 ## Planned features
+<<<<<<< HEAD
 
 ### Main
 [] Character Generation
