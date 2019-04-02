@@ -23,7 +23,7 @@ namespace CharacterSheet
             wis,
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
-        DnDataSetDataContext dataConn = new DnDataSetDataContext();
+        DnDataSetDataContext conn = new DnDataSetDataContext();
         Dice dice;
 
         #region Constructors
@@ -52,7 +52,6 @@ namespace CharacterSheet
         /// </summary>
         public void ReloadData()
         {
-            //lblStr.Text = 20.ToString();
             MessageBox.Show(str.ToString());
             lblStr.Text = str.ToString();
         }
@@ -153,16 +152,35 @@ namespace CharacterSheet
         
         private void dGridInventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+            //Table<Inventory> inventory = conn.GetTable<Inventory>();
+            UpdateInventory();
+
         }
 
         private void dGridInventory_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+            
         }
 
+        private void dGridInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// Runs constantly. Possibly slowing application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dGridInventory_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            UpdateInventory();
+        }
         #endregion
 
+
+        #region void methods that run repetitive code
         /// <summary>
         /// Loads data in Races.xml
         /// </summary>
@@ -178,6 +196,24 @@ namespace CharacterSheet
                 cbBoxRace.Items.Add(race);
             }
         }
+
+        
+
+        public void UpdateInventory()
+        {
+            try
+            {
+                this.Validate();
+                this.inventoryBindingSource.EndEdit();
+                this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show($"Update failed: {ex}");
+            }
+        }
+
+        #endregion
 
         private void cbBoxRace_TextChanged(object sender, EventArgs e)
         {
