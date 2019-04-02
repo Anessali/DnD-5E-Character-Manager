@@ -6,15 +6,20 @@ Most of the information is being stored in a local database unique to each user.
 Currently in an early alpha stage.
 
 ## Planned features
-<<<<<<< HEAD
 
 ### Main
 [] Character Generation
+
 [x] Dice Rolling
+
 [x] Save/load data
+
 
 ### Database Management
 [x] Add and remove races
+
 [x] Inventory Management
+
 [] Individual characters
+
 [] Inventory unique to each character 
