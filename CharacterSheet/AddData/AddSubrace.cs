@@ -31,6 +31,12 @@ namespace CharacterSheet.AddData
             }
         }
 
+        private void TestData()
+        {
+            AddRace f = new AddRace();
+            
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();

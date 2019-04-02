@@ -84,16 +84,15 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnUpdateTest = new System.Windows.Forms.Button();
             this.dGridInventory = new System.Windows.Forms.DataGridView();
-            this.dGridItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
+            this.inventoryTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.InventoryTableAdapter();
+            this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dGridTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
-            this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.InventoryTableAdapter();
             this.charSheetMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,9 +107,9 @@
             this.panel1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // charSheetMenu
@@ -615,7 +614,7 @@
             // 
             this.panel1.Controls.Add(this.btnSetAttributes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 328);
+            this.panel1.Location = new System.Drawing.Point(3, 335);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 63);
             this.panel1.TabIndex = 1;
@@ -653,7 +652,6 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.btnUpdateTest);
             this.tabPage5.Controls.Add(this.dGridInventory);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
@@ -663,25 +661,14 @@
             this.tabPage5.Text = "Inventory";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // btnUpdateTest
-            // 
-            this.btnUpdateTest.Location = new System.Drawing.Point(205, 303);
-            this.btnUpdateTest.Name = "btnUpdateTest";
-            this.btnUpdateTest.Size = new System.Drawing.Size(128, 54);
-            this.btnUpdateTest.TabIndex = 1;
-            this.btnUpdateTest.Text = "Update";
-            this.btnUpdateTest.UseVisualStyleBackColor = true;
-            this.btnUpdateTest.Click += new System.EventHandler(this.btnUpdateTest_Click);
-            // 
             // dGridInventory
             // 
             this.dGridInventory.AutoGenerateColumns = false;
-            this.dGridInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGridInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dGridInventory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dGridInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGridInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dGridItemColumn,
+            this.itemDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.dGridTypeColumn});
@@ -689,21 +676,36 @@
             this.dGridInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGridInventory.Location = new System.Drawing.Point(3, 3);
             this.dGridInventory.Name = "dGridInventory";
-            this.dGridInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dGridInventory.Size = new System.Drawing.Size(548, 388);
             this.dGridInventory.TabIndex = 0;
             this.dGridInventory.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellEndEdit);
             this.dGridInventory.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellValueChanged);
             // 
-            // dGridItemColumn
+            // inventoryBindingSource
             // 
-            this.dGridItemColumn.DataPropertyName = "Item";
-            this.dGridItemColumn.HeaderText = "Item";
-            this.dGridItemColumn.Name = "dGridItemColumn";
-            this.dGridItemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.inventoryBindingSource.DataMember = "Inventory";
+            this.inventoryBindingSource.DataSource = this.dnDataDataSet;
+            // 
+            // dnDataDataSet
+            // 
+            this.dnDataDataSet.DataSetName = "DnDataDataSet";
+            this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inventoryTableAdapter
+            // 
+            this.inventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemDataGridViewTextBoxColumn
+            // 
+            this.itemDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.itemDataGridViewTextBoxColumn.DataPropertyName = "Item";
+            this.itemDataGridViewTextBoxColumn.HeaderText = "Item";
+            this.itemDataGridViewTextBoxColumn.Name = "itemDataGridViewTextBoxColumn";
+            this.itemDataGridViewTextBoxColumn.Width = 66;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
+            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
@@ -720,24 +722,11 @@
             this.dGridTypeColumn.HeaderText = "Type";
             this.dGridTypeColumn.Items.AddRange(new object[] {
             "Weapon",
+            "Armor",
             "Item"});
             this.dGridTypeColumn.Name = "dGridTypeColumn";
             this.dGridTypeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGridTypeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // inventoryBindingSource
-            // 
-            this.inventoryBindingSource.DataMember = "Inventory";
-            this.inventoryBindingSource.DataSource = this.dnDataDataSet;
-            // 
-            // dnDataDataSet
-            // 
-            this.dnDataDataSet.DataSetName = "DnDataDataSet";
-            this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inventoryTableAdapter
-            // 
-            this.inventoryTableAdapter.ClearBeforeFill = true;
+            this.dGridTypeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Main
             // 
@@ -750,7 +739,7 @@
             this.MainMenuStrip = this.charSheetMenu;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Main";
-            this.Text = "D&D Character Manager";
+            this.Text = "Character Manager";
             this.Load += new System.EventHandler(this.Main_Load);
             this.charSheetMenu.ResumeLayout(false);
             this.charSheetMenu.PerformLayout();
@@ -769,9 +758,9 @@
             this.panel1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGridInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -839,11 +828,10 @@
         private DnDataDataSet dnDataDataSet;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
         private DnDataDataSetTableAdapters.InventoryTableAdapter inventoryTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dGridItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn dGridTypeColumn;
-        private System.Windows.Forms.Button btnUpdateTest;
     }
 }
 

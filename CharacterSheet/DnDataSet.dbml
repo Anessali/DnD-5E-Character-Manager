@@ -9,6 +9,12 @@
       <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ItemTypes" Member="ItemTypes">
+    <Type Name="ItemType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Races" Member="Races">
     <Type Name="Race">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,6 +30,26 @@
       <Column Name="Trait2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Trait3" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Trait4" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Race_Subrace" Member="Subraces" ThisKey="Id" OtherKey="RaceId" Type="Subrace" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subraces" Member="Subraces">
+    <Type Name="Subrace">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RaceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Speed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Strength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dexterity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Constitution" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Intelligence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Wisdom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charisma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Trait1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait3" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Trait4" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Race_Subrace" Member="Race" ThisKey="RaceId" OtherKey="Id" Type="Race" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -23,7 +23,7 @@ namespace CharacterSheet
             wis,
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
-        readonly DnDataSetDataContext dataConn = new DnDataSetDataContext();
+        DnDataSetDataContext dataConn = new DnDataSetDataContext();
         Dice dice;
 
         #region Constructors
@@ -43,8 +43,7 @@ namespace CharacterSheet
             // TODO: This line of code loads data into the 'dnDataDataSet.Inventory' table. You can move, or remove it, as needed.
             this.inventoryTableAdapter.Fill(this.dnDataDataSet.Inventory);
             dGridTypeColumn.Sorted = true;
-
-
+            
             LoadRaces();
         }
 
@@ -151,25 +150,7 @@ namespace CharacterSheet
 
 
         #region Inventory DataGrid
-        private void btnUpdateTest_Click(object sender, EventArgs e)
-        {
-            //DataContext dc = new DataContext();
-            //Table<Inventory> inventory = dc.GetTable<Inventory>();
-            //var query = from inv in Inventory
-            //            where inv.Id == 13
-            //            select inv;
-
-            //foreach (var inv in query)
-            //{
-            //    MessageBox.Show($"id = {inv.Item}");
-            //}
-
-
-            //MessageBox.Show(dnDataDataSet.Inventory.DataSet.ToString());
-
-            
-        }
-
+        
         private void dGridInventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
@@ -177,7 +158,7 @@ namespace CharacterSheet
 
         private void dGridInventory_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
+            //this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
         }
 
         #endregion

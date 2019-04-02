@@ -33,9 +33,15 @@ namespace CharacterSheet
     partial void InsertInventory(Inventory instance);
     partial void UpdateInventory(Inventory instance);
     partial void DeleteInventory(Inventory instance);
+    partial void InsertItemType(ItemType instance);
+    partial void UpdateItemType(ItemType instance);
+    partial void DeleteItemType(ItemType instance);
     partial void InsertRace(Race instance);
     partial void UpdateRace(Race instance);
     partial void DeleteRace(Race instance);
+    partial void InsertSubrace(Subrace instance);
+    partial void UpdateSubrace(Subrace instance);
+    partial void DeleteSubrace(Subrace instance);
     #endregion
 		
 		public DnDataSetDataContext() : 
@@ -76,11 +82,27 @@ namespace CharacterSheet
 			}
 		}
 		
+		public System.Data.Linq.Table<ItemType> ItemTypes
+		{
+			get
+			{
+				return this.GetTable<ItemType>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Race> Races
 		{
 			get
 			{
 				return this.GetTable<Race>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Subrace> Subraces
+		{
+			get
+			{
+				return this.GetTable<Subrace>();
 			}
 		}
 	}
@@ -243,6 +265,92 @@ namespace CharacterSheet
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ItemTypes")]
+	public partial class ItemType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Type;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    #endregion
+		
+		public ItemType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Races")]
 	public partial class Race : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -274,6 +382,8 @@ namespace CharacterSheet
 		private string _Trait3;
 		
 		private string _Trait4;
+		
+		private EntitySet<Subrace> _Subraces;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -309,6 +419,7 @@ namespace CharacterSheet
 		
 		public Race()
 		{
+			this._Subraces = new EntitySet<Subrace>(new Action<Subrace>(this.attach_Subraces), new Action<Subrace>(this.detach_Subraces));
 			OnCreated();
 		}
 		
@@ -568,6 +679,446 @@ namespace CharacterSheet
 					this._Trait4 = value;
 					this.SendPropertyChanged("Trait4");
 					this.OnTrait4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Race_Subrace", Storage="_Subraces", ThisKey="Id", OtherKey="RaceId")]
+		public EntitySet<Subrace> Subraces
+		{
+			get
+			{
+				return this._Subraces;
+			}
+			set
+			{
+				this._Subraces.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Subraces(Subrace entity)
+		{
+			this.SendPropertyChanging();
+			entity.Race = this;
+		}
+		
+		private void detach_Subraces(Subrace entity)
+		{
+			this.SendPropertyChanging();
+			entity.Race = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Subraces")]
+	public partial class Subrace : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.Nullable<int> _RaceId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Speed;
+		
+		private System.Nullable<int> _Strength;
+		
+		private System.Nullable<int> _Dexterity;
+		
+		private System.Nullable<int> _Constitution;
+		
+		private System.Nullable<int> _Intelligence;
+		
+		private System.Nullable<int> _Wisdom;
+		
+		private System.Nullable<int> _Charisma;
+		
+		private string _Trait1;
+		
+		private string _Trait2;
+		
+		private string _Trait3;
+		
+		private string _Trait4;
+		
+		private EntityRef<Race> _Race;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnRaceIdChanging(System.Nullable<int> value);
+    partial void OnRaceIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSpeedChanging(System.Nullable<int> value);
+    partial void OnSpeedChanged();
+    partial void OnStrengthChanging(System.Nullable<int> value);
+    partial void OnStrengthChanged();
+    partial void OnDexterityChanging(System.Nullable<int> value);
+    partial void OnDexterityChanged();
+    partial void OnConstitutionChanging(System.Nullable<int> value);
+    partial void OnConstitutionChanged();
+    partial void OnIntelligenceChanging(System.Nullable<int> value);
+    partial void OnIntelligenceChanged();
+    partial void OnWisdomChanging(System.Nullable<int> value);
+    partial void OnWisdomChanged();
+    partial void OnCharismaChanging(System.Nullable<int> value);
+    partial void OnCharismaChanged();
+    partial void OnTrait1Changing(string value);
+    partial void OnTrait1Changed();
+    partial void OnTrait2Changing(string value);
+    partial void OnTrait2Changed();
+    partial void OnTrait3Changing(string value);
+    partial void OnTrait3Changed();
+    partial void OnTrait4Changing(string value);
+    partial void OnTrait4Changed();
+    #endregion
+		
+		public Subrace()
+		{
+			this._Race = default(EntityRef<Race>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RaceId", DbType="Int")]
+		public System.Nullable<int> RaceId
+		{
+			get
+			{
+				return this._RaceId;
+			}
+			set
+			{
+				if ((this._RaceId != value))
+				{
+					if (this._Race.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRaceIdChanging(value);
+					this.SendPropertyChanging();
+					this._RaceId = value;
+					this.SendPropertyChanged("RaceId");
+					this.OnRaceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Speed", DbType="Int")]
+		public System.Nullable<int> Speed
+		{
+			get
+			{
+				return this._Speed;
+			}
+			set
+			{
+				if ((this._Speed != value))
+				{
+					this.OnSpeedChanging(value);
+					this.SendPropertyChanging();
+					this._Speed = value;
+					this.SendPropertyChanged("Speed");
+					this.OnSpeedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Strength", DbType="Int")]
+		public System.Nullable<int> Strength
+		{
+			get
+			{
+				return this._Strength;
+			}
+			set
+			{
+				if ((this._Strength != value))
+				{
+					this.OnStrengthChanging(value);
+					this.SendPropertyChanging();
+					this._Strength = value;
+					this.SendPropertyChanged("Strength");
+					this.OnStrengthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dexterity", DbType="Int")]
+		public System.Nullable<int> Dexterity
+		{
+			get
+			{
+				return this._Dexterity;
+			}
+			set
+			{
+				if ((this._Dexterity != value))
+				{
+					this.OnDexterityChanging(value);
+					this.SendPropertyChanging();
+					this._Dexterity = value;
+					this.SendPropertyChanged("Dexterity");
+					this.OnDexterityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Constitution", DbType="Int")]
+		public System.Nullable<int> Constitution
+		{
+			get
+			{
+				return this._Constitution;
+			}
+			set
+			{
+				if ((this._Constitution != value))
+				{
+					this.OnConstitutionChanging(value);
+					this.SendPropertyChanging();
+					this._Constitution = value;
+					this.SendPropertyChanged("Constitution");
+					this.OnConstitutionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Intelligence", DbType="Int")]
+		public System.Nullable<int> Intelligence
+		{
+			get
+			{
+				return this._Intelligence;
+			}
+			set
+			{
+				if ((this._Intelligence != value))
+				{
+					this.OnIntelligenceChanging(value);
+					this.SendPropertyChanging();
+					this._Intelligence = value;
+					this.SendPropertyChanged("Intelligence");
+					this.OnIntelligenceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wisdom", DbType="Int")]
+		public System.Nullable<int> Wisdom
+		{
+			get
+			{
+				return this._Wisdom;
+			}
+			set
+			{
+				if ((this._Wisdom != value))
+				{
+					this.OnWisdomChanging(value);
+					this.SendPropertyChanging();
+					this._Wisdom = value;
+					this.SendPropertyChanged("Wisdom");
+					this.OnWisdomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Charisma", DbType="Int")]
+		public System.Nullable<int> Charisma
+		{
+			get
+			{
+				return this._Charisma;
+			}
+			set
+			{
+				if ((this._Charisma != value))
+				{
+					this.OnCharismaChanging(value);
+					this.SendPropertyChanging();
+					this._Charisma = value;
+					this.SendPropertyChanged("Charisma");
+					this.OnCharismaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait1", DbType="NChar(10)")]
+		public string Trait1
+		{
+			get
+			{
+				return this._Trait1;
+			}
+			set
+			{
+				if ((this._Trait1 != value))
+				{
+					this.OnTrait1Changing(value);
+					this.SendPropertyChanging();
+					this._Trait1 = value;
+					this.SendPropertyChanged("Trait1");
+					this.OnTrait1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait2", DbType="NChar(10)")]
+		public string Trait2
+		{
+			get
+			{
+				return this._Trait2;
+			}
+			set
+			{
+				if ((this._Trait2 != value))
+				{
+					this.OnTrait2Changing(value);
+					this.SendPropertyChanging();
+					this._Trait2 = value;
+					this.SendPropertyChanged("Trait2");
+					this.OnTrait2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait3", DbType="NChar(10)")]
+		public string Trait3
+		{
+			get
+			{
+				return this._Trait3;
+			}
+			set
+			{
+				if ((this._Trait3 != value))
+				{
+					this.OnTrait3Changing(value);
+					this.SendPropertyChanging();
+					this._Trait3 = value;
+					this.SendPropertyChanged("Trait3");
+					this.OnTrait3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trait4", DbType="NChar(10)")]
+		public string Trait4
+		{
+			get
+			{
+				return this._Trait4;
+			}
+			set
+			{
+				if ((this._Trait4 != value))
+				{
+					this.OnTrait4Changing(value);
+					this.SendPropertyChanging();
+					this._Trait4 = value;
+					this.SendPropertyChanged("Trait4");
+					this.OnTrait4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Race_Subrace", Storage="_Race", ThisKey="RaceId", OtherKey="Id", IsForeignKey=true)]
+		public Race Race
+		{
+			get
+			{
+				return this._Race.Entity;
+			}
+			set
+			{
+				Race previousValue = this._Race.Entity;
+				if (((previousValue != value) 
+							|| (this._Race.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Race.Entity = null;
+						previousValue.Subraces.Remove(this);
+					}
+					this._Race.Entity = value;
+					if ((value != null))
+					{
+						value.Subraces.Add(this);
+						this._RaceId = value.Id;
+					}
+					else
+					{
+						this._RaceId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Race");
 				}
 			}
 		}

@@ -32,3 +32,4 @@ C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\Chara
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.csproj.CoreCompileInputs.cache
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.exe
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.pdb
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Release\CharacterSheet.Edit.Races.resources

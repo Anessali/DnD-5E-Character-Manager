@@ -60,15 +60,15 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
+            this.label1.Size = new System.Drawing.Size(97, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "New Race Name:";
+            this.label1.Text = "Race Name:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(151, 24);
+            this.txtName.Location = new System.Drawing.Point(116, 24);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(133, 26);
+            this.txtName.Size = new System.Drawing.Size(161, 26);
             this.txtName.TabIndex = 1;
             // 
             // label6
@@ -147,7 +147,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.btnCancel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAccept, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAccept, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 342);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,24 +159,24 @@
             // btnCancel
             // 
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCancel.Location = new System.Drawing.Point(3, 3);
+            this.btnCancel.Location = new System.Drawing.Point(163, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 56);
-            this.btnCancel.TabIndex = 34;
+            this.btnCancel.TabIndex = 37;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnAccept
             // 
             this.btnAccept.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAccept.Location = new System.Drawing.Point(163, 3);
+            this.btnAccept.Location = new System.Drawing.Point(3, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(154, 56);
-            this.btnAccept.TabIndex = 35;
+            this.btnAccept.TabIndex = 36;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = true;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click_1);
             // 
             // txtStr
             // 
@@ -329,13 +329,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.NumericUpDown txtStr;
         private System.Windows.Forms.NumericUpDown txtDex;
         private System.Windows.Forms.NumericUpDown txtInt;
         private System.Windows.Forms.NumericUpDown txtCon;
         private System.Windows.Forms.NumericUpDown txtCha;
         private System.Windows.Forms.NumericUpDown txtWis;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAccept;
     }
 }
