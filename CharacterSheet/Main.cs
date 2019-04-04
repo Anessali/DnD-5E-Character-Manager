@@ -143,7 +143,7 @@ namespace CharacterSheet
 
         private void editRacesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Edit.BaseEdit races = new Edit.BaseEdit();
+            Edit.EditRaces races = new Edit.EditRaces();
             races.Show();
         }
 

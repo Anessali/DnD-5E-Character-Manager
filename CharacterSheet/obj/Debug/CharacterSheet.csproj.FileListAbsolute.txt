@@ -109,3 +109,4 @@ C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\DnDataS
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.AddRace.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.AddSubrace.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.BaseEdit.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.EditRaces.resources

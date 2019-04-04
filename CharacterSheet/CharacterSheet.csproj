@@ -102,11 +102,23 @@
       <DependentUpon>DnDataSet.dbml</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Edit\EditRaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\EditRaces.Designer.cs">
+      <DependentUpon>EditRaces.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edit\BaseEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Edit\BaseEdit.Designer.cs">
       <DependentUpon>BaseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\EditSubraces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\EditSubraces.Designer.cs">
+      <DependentUpon>EditSubraces.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -139,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiceRolls\DiceMessageBox.resx">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\EditRaces.resx">
+      <DependentUpon>EditRaces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit\BaseEdit.resx">
       <DependentUpon>BaseEdit.cs</DependentUpon>
