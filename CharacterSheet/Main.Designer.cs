@@ -37,7 +37,6 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.addRaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.addSubraceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,7 +159,6 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editCharacterToolStripMenuItem,
             this.toolStripSeparator1,
-            this.addRaceToolStripMenuItem,
             this.editRacesToolStripMenuItem,
             this.toolStripSeparator2,
             this.addSubraceToolStripMenuItem,
@@ -173,50 +171,43 @@
             // editCharacterToolStripMenuItem
             // 
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
-            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.editCharacterToolStripMenuItem.Text = "Edit Character";
+            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editCharacterToolStripMenuItem.Text = "Character";
             this.editCharacterToolStripMenuItem.Click += new System.EventHandler(this.editCharacterToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
-            // 
-            // addRaceToolStripMenuItem
-            // 
-            this.addRaceToolStripMenuItem.Name = "addRaceToolStripMenuItem";
-            this.addRaceToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.addRaceToolStripMenuItem.Text = "Add Race";
-            this.addRaceToolStripMenuItem.Click += new System.EventHandler(this.addRaceToolStripMenuItem_Click);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // editRacesToolStripMenuItem
             // 
             this.editRacesToolStripMenuItem.Name = "editRacesToolStripMenuItem";
-            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.editRacesToolStripMenuItem.Text = "Edit Races";
+            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editRacesToolStripMenuItem.Text = "Races";
             this.editRacesToolStripMenuItem.Click += new System.EventHandler(this.editRacesToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // addSubraceToolStripMenuItem
             // 
             this.addSubraceToolStripMenuItem.Name = "addSubraceToolStripMenuItem";
-            this.addSubraceToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.addSubraceToolStripMenuItem.Text = "Add Subrace";
+            this.addSubraceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addSubraceToolStripMenuItem.Text = "Subraces";
             this.addSubraceToolStripMenuItem.Click += new System.EventHandler(this.addSubraceToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // addClassToolStripMenuItem
             // 
             this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
-            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addClassToolStripMenuItem.Text = "Add Class";
             // 
             // rollToolStripMenuItem
@@ -785,7 +776,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lblSubrace;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addRaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSubraceToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSetAttributes;

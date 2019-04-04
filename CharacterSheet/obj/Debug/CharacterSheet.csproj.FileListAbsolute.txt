@@ -51,12 +51,10 @@ C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheets\E
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\Races\Races.xml
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\Races\Subraces.xml
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.StatWindows.SetAttributes.resources
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.AddData.AddRace.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.StatWindows.CharacterInfo.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\CharacterSheets\StartingPage.xml
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\DnData.mdf
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\DnData_log.ldf
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.AddData.AddSubrace.resources
 C:\Users\Shiro\Google Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\CharacterSheets\StartingPage.xml
 C:\Users\Shiro\Google Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\Races\Races.xml
 C:\Users\Shiro\Google Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\Races\Subraces.xml
@@ -107,5 +105,7 @@ C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Char
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.exe
 C:\Users\liggettt\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.pdb
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.Races.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\DnDataSet.cs
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.AddRace.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.AddSubrace.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.BaseEdit.resources

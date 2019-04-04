@@ -137,13 +137,13 @@ namespace CharacterSheet
 
         private void addSubraceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddData.AddSubrace newSubrace = new AddData.AddSubrace();
+            Edit.AddSubrace newSubrace = new Edit.AddSubrace();
             newSubrace.Show();
         }
 
         private void editRacesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Edit.Races races = new Edit.Races();
+            Edit.BaseEdit races = new Edit.BaseEdit();
             races.Show();
         }
 
@@ -236,7 +236,7 @@ namespace CharacterSheet
 
         private void addRaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddData.AddRace newRace = new AddData.AddRace();
+            Edit.AddRace newRace = new Edit.AddRace();
             newRace.Show();
         }
 

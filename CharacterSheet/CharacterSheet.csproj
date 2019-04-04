@@ -62,16 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddData\AddRace.cs">
+    <Compile Include="Edit\AddRace.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddData\AddRace.Designer.cs">
+    <Compile Include="Edit\AddRace.Designer.cs">
       <DependentUpon>AddRace.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddData\AddSubrace.cs">
+    <Compile Include="Edit\AddSubrace.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddData\AddSubrace.Designer.cs">
+    <Compile Include="Edit\AddSubrace.Designer.cs">
       <DependentUpon>AddSubrace.cs</DependentUpon>
     </Compile>
     <Compile Include="DiceRolls\AttributeGeneration.cs">
@@ -102,11 +102,11 @@
       <DependentUpon>DnDataSet.dbml</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Edit\Races.cs">
+    <Compile Include="Edit\BaseEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edit\Races.Designer.cs">
-      <DependentUpon>Races.cs</DependentUpon>
+    <Compile Include="Edit\BaseEdit.Designer.cs">
+      <DependentUpon>BaseEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -128,10 +128,10 @@
     <Compile Include="StatWindows\SetAttributes.Designer.cs">
       <DependentUpon>SetAttributes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddData\AddRace.resx">
+    <EmbeddedResource Include="Edit\AddRace.resx">
       <DependentUpon>AddRace.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddData\AddSubrace.resx">
+    <EmbeddedResource Include="Edit\AddSubrace.resx">
       <DependentUpon>AddSubrace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiceRolls\AttributeGeneration.resx">
@@ -140,8 +140,8 @@
     <EmbeddedResource Include="DiceRolls\DiceMessageBox.resx">
       <DependentUpon>DiceMessageBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit\Races.resx">
-      <DependentUpon>Races.cs</DependentUpon>
+    <EmbeddedResource Include="Edit\BaseEdit.resx">
+      <DependentUpon>BaseEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
