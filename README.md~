@@ -9,11 +9,17 @@ Currently in an early alpha stage.
 
 ### Main
 [] Character Generation
+
 [x] Dice Rolling
+
 [x] Save/load data
+
 
 ### Database Management
 [x] Add and remove races
+
 [x] Inventory Management
+
 [] Individual characters
+
 [] Inventory unique to each character 
