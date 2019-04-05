@@ -140,6 +140,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // racesBindingSource
             // 
@@ -193,12 +194,12 @@
         private DnDataDataSet dnDataDataSet;
         private System.Windows.Forms.BindingSource dnDataDataSetBindingSource;
         private System.Windows.Forms.BindingSource racesBindingSource;
-        private System.Windows.Forms.DataGridView dGrid;
-        private System.Windows.Forms.MenuStrip menu;
         protected System.Windows.Forms.Button btnDelete;
         protected System.Windows.Forms.Button btnClose;
         protected System.Windows.Forms.Button btnEdit;
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.Button btnAdd;
+        protected System.Windows.Forms.DataGridView dGrid;
+        internal System.Windows.Forms.MenuStrip menu;
     }
 }

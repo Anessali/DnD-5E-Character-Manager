@@ -91,6 +91,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DnDataSet.cs">
       <DependentUpon>DnDataSet.dbml</DependentUpon>
@@ -119,6 +120,12 @@
     </Compile>
     <Compile Include="Edit\EditSubraces.Designer.cs">
       <DependentUpon>EditSubraces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\FormInheritTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\FormInheritTest.Designer.cs">
+      <DependentUpon>FormInheritTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -158,6 +165,9 @@
     <EmbeddedResource Include="Edit\BaseEdit.resx">
       <DependentUpon>BaseEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit\FormInheritTest.resx">
+      <DependentUpon>FormInheritTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,14 +189,17 @@
     </EmbeddedResource>
     <None Include="DnDataDataSet.xsc">
       <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DnDataDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DnDataDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DnDataDataSet.xss">
       <DependentUpon>DnDataDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DnDataSet.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

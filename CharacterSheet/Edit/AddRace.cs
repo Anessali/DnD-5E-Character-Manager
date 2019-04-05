@@ -34,7 +34,7 @@ namespace CharacterSheet.Edit
         {
             //For more information: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/how-to-connect-to-a-database
             DnDataSetDataContext db = new DnDataSetDataContext();
-            Table<Race> Races = db.GetTable<Race>();
+            //Table<Race> Races = db.GetTable<Race>();
             if (txtName.Text == "")
             {
                 MessageBox.Show("Invalid name");

@@ -23,7 +23,7 @@ namespace CharacterSheet
             wis,
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
-        DnDataSetDataContext conn = new DnDataSetDataContext();
+        DnDataSetDataContext db = new DnDataSetDataContext();
         Dice dice;
 
         #region Constructors
@@ -114,6 +114,8 @@ namespace CharacterSheet
         }
         #endregion
 
+
+        #region toolstrip
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -146,10 +148,11 @@ namespace CharacterSheet
             Edit.EditRaces races = new Edit.EditRaces();
             races.Show();
         }
+        #endregion
 
 
         #region Inventory DataGrid
-        
+
         private void dGridInventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //Table<Inventory> inventory = conn.GetTable<Inventory>();
@@ -186,15 +189,15 @@ namespace CharacterSheet
         /// </summary>
         public void LoadRaces()
         {
-            XElement racesFile = XElement.Load("Data/Races/Races.xml");
-            IEnumerable<XElement> races =
-                from race in racesFile.Descendants("Race")
-                select race.Element("Name")
+            var query =
+                from race in db.Races
+                select race.Name
                 ;
-            foreach (string race in races)
+            foreach (string race in query)
             {
                 cbBoxRace.Items.Add(race);
             }
+            cbBoxRace.Sorted = true;
         }
 
         
@@ -232,12 +235,6 @@ namespace CharacterSheet
                 cbBoxSubrace.Items.Add(subrace.Element("Name").Value);
             }
 
-        }
-
-        private void addRaceToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Edit.AddRace newRace = new Edit.AddRace();
-            newRace.Show();
         }
 
         private void btnSetAttributes_Click(object sender, EventArgs e)
