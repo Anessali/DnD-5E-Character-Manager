@@ -8,18 +8,18 @@ Currently in an early alpha stage.
 ## Planned features
 
 ### Main
-[ ] Character Generation
+- [] Character Generation
 
-[ x ] Dice Rolling
+- [x] Dice Rolling
 
-[ x ] Save/load data
+- [x] Save/load data
 
 
 ### Database Management
-[ x ] Add and remove races
+- [x] Add and remove races
 
-[ x ] Inventory Management
+- [x] Inventory Management
 
-[ ] Individual characters
+- [] Individual characters
 
-[ ] Inventory unique to each character 
+- [] Inventory unique to each character 

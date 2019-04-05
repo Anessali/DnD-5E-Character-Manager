@@ -8,7 +8,7 @@ Currently in an early alpha stage.
 ## Planned features
 
 ### Main
-- [] Character Generation
+- [ ] Character Generation
 
 - [x] Dice Rolling
 
@@ -20,6 +20,6 @@ Currently in an early alpha stage.
 
 - [x] Inventory Management
 
-- [] Individual characters
+- [ ] Individual characters
 
-- [] Inventory unique to each character 
+- [ ] Inventory unique to each character 
