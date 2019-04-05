@@ -24,6 +24,7 @@ namespace CharacterSheet
             cha;
         XElement settings = XElement.Load("Data/Settings.xml");
         DnDataSetDataContext db = new DnDataSetDataContext();
+        LoadData load = new LoadData();
         Dice dice;
 
         #region Constructors
@@ -43,8 +44,9 @@ namespace CharacterSheet
             // TODO: This line of code loads data into the 'dnDataDataSet.Inventory' table. You can move, or remove it, as needed.
             this.inventoryTableAdapter.Fill(this.dnDataDataSet.Inventory);
             dGridTypeColumn.Sorted = true;
-            
-            LoadRaces();
+
+            //loads in data from LoadRaces class
+            cbBoxRace = load.Races(cbBoxRace);
         }
 
         /// <summary>
@@ -184,24 +186,7 @@ namespace CharacterSheet
 
 
         #region void methods that run repetitive code
-        /// <summary>
-        /// Loads data in Races.xml
-        /// </summary>
-        public void LoadRaces()
-        {
-            var query =
-                from race in db.Races
-                select race.Name
-                ;
-            foreach (string race in query)
-            {
-                cbBoxRace.Items.Add(race);
-            }
-            cbBoxRace.Sorted = true;
-        }
-
         
-
         public void UpdateInventory()
         {
             try

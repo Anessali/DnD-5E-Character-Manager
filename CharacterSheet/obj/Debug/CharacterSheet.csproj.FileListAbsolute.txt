@@ -110,7 +110,6 @@ C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Charact
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.AddSubrace.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.BaseEdit.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.EditRaces.resources
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.FormInheritTest.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\DnDataDataSet.Designer.cs
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\DnDataDataSet.xsc
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\DnDataDataSet.xsd
