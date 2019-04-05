@@ -8,7 +8,9 @@ Currently in an early alpha stage.
 ## Planned features
 
 ### Main
-- [] Character Generation
+- [ ] Character Generation
+
+- [ ] Database can store races, subraces, and classes
 
 - [x] Dice Rolling
 
@@ -18,8 +20,16 @@ Currently in an early alpha stage.
 ### Database Management
 - [x] Add and remove races
 
+- [ ] Add and remove subraces. Removing a race removes all its subraces
+
+- [ ] Add and remove classes
+
+### Character Management
+- [ ] Individual characters - will likely store characters in XML files
+
+- [ ] Character can select class and level
+
 - [x] Inventory Management
 
-- [] Individual characters
+- [ ] Inventory unique to each character - will likely be stored in character xml
 
-- [] Inventory unique to each character 
