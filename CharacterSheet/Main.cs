@@ -116,30 +116,24 @@ namespace CharacterSheet
         }
         #endregion
 
-
         #region toolstrip
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
 
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Edit subraces
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void subracesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            Edit.EditSubraces window = new Edit.EditSubraces();
+            window.Show();
         }
 
-        private void editCharacterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbBoxRace_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addSubraceToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addSubraceToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Edit.AddSubrace newSubrace = new Edit.AddSubrace();
             newSubrace.Show();
@@ -172,6 +166,12 @@ namespace CharacterSheet
         {
             
         }
+
+        
+
+
+
+
 
         /// <summary>
         /// Runs constantly. Possibly slowing application
@@ -208,18 +208,15 @@ namespace CharacterSheet
             //First clears the combo box
             cbBoxSubrace.Items.Clear();
 
-            XElement racesFile = XElement.Load("Data/Races/Subraces.xml");
-
-            IEnumerable<XElement> subraces = 
-                from subrace in racesFile.Descendants("Subrace")
-                where (string)subrace.Attribute("Type") == cbBoxRace.Text
-                select subrace;
-
-            foreach (var subrace in subraces)
+            var raceQuery = from race in db.Races
+                            join subrace in db.Subraces on race.Id equals subrace.RaceId
+                            where race.Name == cbBoxRace.Text
+                            select subrace.Name
+                            ;
+            foreach (string subrace in raceQuery )
             {
-                cbBoxSubrace.Items.Add(subrace.Element("Name").Value);
+                cbBoxSubrace.Items.Add(subrace);
             }
-
         }
 
         private void btnSetAttributes_Click(object sender, EventArgs e)

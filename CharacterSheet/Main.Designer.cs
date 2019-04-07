@@ -39,7 +39,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.editRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.addSubraceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subracesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSubraceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,7 +134,6 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
@@ -161,7 +161,7 @@
             this.toolStripSeparator1,
             this.editRacesToolStripMenuItem,
             this.toolStripSeparator2,
-            this.addSubraceToolStripMenuItem,
+            this.subracesToolStripMenuItem,
             this.toolStripSeparator3,
             this.addClassToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -173,7 +173,6 @@
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
             this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editCharacterToolStripMenuItem.Text = "Character";
-            this.editCharacterToolStripMenuItem.Click += new System.EventHandler(this.editCharacterToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -192,12 +191,21 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
-            // addSubraceToolStripMenuItem
+            // subracesToolStripMenuItem
             // 
-            this.addSubraceToolStripMenuItem.Name = "addSubraceToolStripMenuItem";
-            this.addSubraceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addSubraceToolStripMenuItem.Text = "Add Subrace";
-            this.addSubraceToolStripMenuItem.Click += new System.EventHandler(this.addSubraceToolStripMenuItem_Click);
+            this.subracesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSubraceToolStripMenuItem1});
+            this.subracesToolStripMenuItem.Name = "subracesToolStripMenuItem";
+            this.subracesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.subracesToolStripMenuItem.Text = "Subraces";
+            this.subracesToolStripMenuItem.Click += new System.EventHandler(this.subracesToolStripMenuItem_Click_1);
+            // 
+            // addSubraceToolStripMenuItem1
+            // 
+            this.addSubraceToolStripMenuItem1.Name = "addSubraceToolStripMenuItem1";
+            this.addSubraceToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addSubraceToolStripMenuItem1.Text = "Add Subrace";
+            this.addSubraceToolStripMenuItem1.Click += new System.EventHandler(this.addSubraceToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -349,7 +357,6 @@
             this.cbBoxRace.Name = "cbBoxRace";
             this.cbBoxRace.Size = new System.Drawing.Size(145, 28);
             this.cbBoxRace.TabIndex = 1;
-            this.cbBoxRace.SelectedIndexChanged += new System.EventHandler(this.cbBoxRace_SelectedIndexChanged);
             this.cbBoxRace.TextChanged += new System.EventHandler(this.cbBoxRace_TextChanged);
             // 
             // lblSubrace
@@ -776,7 +783,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lblSubrace;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addSubraceToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnSetAttributes;
         private System.Windows.Forms.Panel panel1;
@@ -824,6 +830,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn dGridTypeColumn;
+        private System.Windows.Forms.ToolStripMenuItem subracesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addSubraceToolStripMenuItem1;
     }
 }
 

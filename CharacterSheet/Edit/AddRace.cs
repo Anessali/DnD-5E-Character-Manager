@@ -41,9 +41,9 @@ namespace CharacterSheet.Edit
             }
             else
             {
+                EditRaces n = new EditRaces();
                 if (beingEdited == false)
                 {
-
                     Race race = new Race
                     {
                         Name = txtName.Text,
@@ -57,6 +57,8 @@ namespace CharacterSheet.Edit
 
                     db.Races.InsertOnSubmit(race);
                     db.SubmitChanges();
+                    
+                    n.Show();
 
                     this.Close();
                 }
@@ -66,8 +68,8 @@ namespace CharacterSheet.Edit
                     var query =
                         from race in db.Races
                         where race.Id == raceID
-                        select race
-                        ;
+                        select race;
+
                     foreach (Race races in query)
                     {
                         races.Name = txtName.Text;
@@ -81,16 +83,15 @@ namespace CharacterSheet.Edit
                     try
                     {
                         db.SubmitChanges();
+                        n.Show();
                         this.Close();
                     }
                     catch (Exception exc)
                     {
                         MessageBox.Show($"Error: {exc}");
                     }
-                }
-                    
+                }    
             }
-            
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)

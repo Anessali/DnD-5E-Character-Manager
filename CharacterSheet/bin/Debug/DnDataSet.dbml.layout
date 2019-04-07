@@ -8,25 +8,25 @@
         <elementListCompartment Id="8eb975d4-a8f3-445e-8270-081cc088acc0" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5070d01c-ad1c-4630-a890-98bef1475fb8" absoluteBounds="3.375, 0.5, 2, 1.1939925130208333">
+    <classShape Id="5070d01c-ad1c-4630-a890-98bef1475fb8" absoluteBounds="2.875, 0.5, 2, 1.1939925130208333">
       <DataClassMoniker Name="/DnDataSetDataContext/ItemType" />
       <nestedChildShapes>
-        <elementListCompartment Id="0dbfffa3-134f-4ad9-8831-bc5d7d52e336" absoluteBounds="3.39, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0dbfffa3-134f-4ad9-8831-bc5d7d52e336" absoluteBounds="2.89, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6404d5f3-26ed-48ae-a7e0-ffba990b1421" absoluteBounds="0.5, 2.875, 2, 3.3093082682291666">
+    <classShape Id="6404d5f3-26ed-48ae-a7e0-ffba990b1421" absoluteBounds="0.5, 2.625, 2, 3.3093082682291666">
       <DataClassMoniker Name="/DnDataSetDataContext/Race" />
       <nestedChildShapes>
-        <elementListCompartment Id="c310a42b-3c66-4e98-a03e-ae3b20b320e7" absoluteBounds="0.51500000000000012, 3.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c310a42b-3c66-4e98-a03e-ae3b20b320e7" absoluteBounds="0.51500000000000012, 3.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="35e8345d-1be8-44ed-8f10-11f1dae03f6f" absoluteBounds="3.375, 2.875, 2, 3.5016097005208326">
+    <classShape Id="35e8345d-1be8-44ed-8f10-11f1dae03f6f" absoluteBounds="2.875, 2.125, 2, 3.5016097005208326">
       <DataClassMoniker Name="/DnDataSetDataContext/Subrace" />
       <nestedChildShapes>
-        <elementListCompartment Id="5fe958dd-34f7-470e-9a4c-b18dab8af9ee" absoluteBounds="3.3899999999999997, 3.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5fe958dd-34f7-470e-9a4c-b18dab8af9ee" absoluteBounds="2.8899999999999997, 2.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 4.52965413411458); (3.375 : 4.52965413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 4.12580485026042); (2.875 : 4.12580485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DnDataSetDataContext/Race/Race_Subrace" />
       <nodes>
         <classShapeMoniker Id="6404d5f3-26ed-48ae-a7e0-ffba990b1421" />

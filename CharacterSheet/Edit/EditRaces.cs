@@ -48,9 +48,10 @@ namespace CharacterSheet.Edit
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddRace window = new AddRace();
+            this.Close();
             window.ShowDialog();
-
-            LoadData();
+            
+            //LoadData();
         }
 
         /// <summary>
@@ -60,13 +61,6 @@ namespace CharacterSheet.Edit
         {
             dGridRaces.DataSource = conn.Races;
             dGridRaces.Sort(dGridNameColumn, ListSortDirection.Ascending);
-        }
-
-        private void Update()
-        {
-            this.Validate();
-            this.racesBindingSource.EndEdit();
-            this.racesTableAdapter.Update(this.dnDataDataSet.Races);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -83,7 +77,7 @@ namespace CharacterSheet.Edit
             f.Cha = dGridRaces.SelectedRows[0].Cells[8].Value.ToString();
             f.ShowDialog();
             LoadData();
-
+            
         }
     }
 }
