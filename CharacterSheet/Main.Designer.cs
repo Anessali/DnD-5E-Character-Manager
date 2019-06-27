@@ -40,7 +40,6 @@
             this.editRacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.subracesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addSubraceToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.addClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +92,7 @@
             this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
             this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.InventoryTableAdapter();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.charSheetMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -114,6 +114,7 @@
             // 
             // charSheetMenu
             // 
+            this.charSheetMenu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.charSheetMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -121,7 +122,7 @@
             this.charSheetMenu.Location = new System.Drawing.Point(0, 0);
             this.charSheetMenu.Name = "charSheetMenu";
             this.charSheetMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.charSheetMenu.Size = new System.Drawing.Size(562, 25);
+            this.charSheetMenu.Size = new System.Drawing.Size(562, 35);
             this.charSheetMenu.TabIndex = 0;
             this.charSheetMenu.Text = "menuStrip1";
             // 
@@ -130,27 +131,28 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.newToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.newToolStripMenuItem.Text = "New";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -165,57 +167,48 @@
             this.toolStripSeparator3,
             this.addClassToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 19);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // editCharacterToolStripMenuItem
             // 
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
-            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.editCharacterToolStripMenuItem.Text = "Character";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // editRacesToolStripMenuItem
             // 
             this.editRacesToolStripMenuItem.Name = "editRacesToolStripMenuItem";
-            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editRacesToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.editRacesToolStripMenuItem.Text = "Races";
             this.editRacesToolStripMenuItem.Click += new System.EventHandler(this.editRacesToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(163, 6);
             // 
             // subracesToolStripMenuItem
             // 
-            this.subracesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSubraceToolStripMenuItem1});
             this.subracesToolStripMenuItem.Name = "subracesToolStripMenuItem";
-            this.subracesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.subracesToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.subracesToolStripMenuItem.Text = "Subraces";
             this.subracesToolStripMenuItem.Click += new System.EventHandler(this.subracesToolStripMenuItem_Click_1);
-            // 
-            // addSubraceToolStripMenuItem1
-            // 
-            this.addSubraceToolStripMenuItem1.Name = "addSubraceToolStripMenuItem1";
-            this.addSubraceToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.addSubraceToolStripMenuItem1.Text = "Add Subrace";
-            this.addSubraceToolStripMenuItem1.Click += new System.EventHandler(this.addSubraceToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(163, 6);
             // 
             // addClassToolStripMenuItem
             // 
             this.addClassToolStripMenuItem.Name = "addClassToolStripMenuItem";
-            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addClassToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
             this.addClassToolStripMenuItem.Text = "Add Class";
             // 
             // rollToolStripMenuItem
@@ -229,55 +222,55 @@
             this.d4ToolStripMenuItem,
             this.attributeToolStripMenuItem});
             this.rollToolStripMenuItem.Name = "rollToolStripMenuItem";
-            this.rollToolStripMenuItem.Size = new System.Drawing.Size(39, 19);
+            this.rollToolStripMenuItem.Size = new System.Drawing.Size(55, 29);
             this.rollToolStripMenuItem.Text = "Roll";
             // 
             // d20ToolStripMenuItem
             // 
             this.d20ToolStripMenuItem.Name = "d20ToolStripMenuItem";
-            this.d20ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d20ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d20ToolStripMenuItem.Text = "D20";
             this.d20ToolStripMenuItem.Click += new System.EventHandler(this.d20ToolStripMenuItem_Click);
             // 
             // d12ToolStripMenuItem
             // 
             this.d12ToolStripMenuItem.Name = "d12ToolStripMenuItem";
-            this.d12ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d12ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d12ToolStripMenuItem.Text = "D12";
             this.d12ToolStripMenuItem.Click += new System.EventHandler(this.d12ToolStripMenuItem_Click);
             // 
             // d10ToolStripMenuItem
             // 
             this.d10ToolStripMenuItem.Name = "d10ToolStripMenuItem";
-            this.d10ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d10ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d10ToolStripMenuItem.Text = "D10";
             this.d10ToolStripMenuItem.Click += new System.EventHandler(this.d10ToolStripMenuItem_Click);
             // 
             // d8ToolStripMenuItem
             // 
             this.d8ToolStripMenuItem.Name = "d8ToolStripMenuItem";
-            this.d8ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d8ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d8ToolStripMenuItem.Text = "D8";
             this.d8ToolStripMenuItem.Click += new System.EventHandler(this.d8ToolStripMenuItem_Click);
             // 
             // d6ToolStripMenuItem
             // 
             this.d6ToolStripMenuItem.Name = "d6ToolStripMenuItem";
-            this.d6ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d6ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d6ToolStripMenuItem.Text = "D6";
             this.d6ToolStripMenuItem.Click += new System.EventHandler(this.d6ToolStripMenuItem_Click);
             // 
             // d4ToolStripMenuItem
             // 
             this.d4ToolStripMenuItem.Name = "d4ToolStripMenuItem";
-            this.d4ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.d4ToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.d4ToolStripMenuItem.Text = "D4";
             this.d4ToolStripMenuItem.Click += new System.EventHandler(this.d4ToolStripMenuItem_Click);
             // 
             // attributeToolStripMenuItem
             // 
             this.attributeToolStripMenuItem.Name = "attributeToolStripMenuItem";
-            this.attributeToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.attributeToolStripMenuItem.Size = new System.Drawing.Size(158, 30);
             this.attributeToolStripMenuItem.Text = "Attribute";
             this.attributeToolStripMenuItem.Click += new System.EventHandler(this.attributeToolStripMenuItem_Click);
             // 
@@ -289,10 +282,10 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 25);
+            this.tabControl1.Location = new System.Drawing.Point(0, 35);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(562, 427);
+            this.tabControl1.Size = new System.Drawing.Size(562, 417);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -306,7 +299,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(554, 394);
+            this.tabPage1.Size = new System.Drawing.Size(554, 384);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Character";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -375,7 +368,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(554, 394);
+            this.tabPage2.Size = new System.Drawing.Size(554, 384);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Attributes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -612,7 +605,7 @@
             // 
             this.panel1.Controls.Add(this.btnSetAttributes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 328);
+            this.panel1.Location = new System.Drawing.Point(3, 318);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 63);
             this.panel1.TabIndex = 1;
@@ -633,7 +626,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(554, 394);
+            this.tabPage3.Size = new System.Drawing.Size(554, 384);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Traits";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -643,7 +636,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(554, 394);
+            this.tabPage4.Size = new System.Drawing.Size(554, 384);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Equipped";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -654,7 +647,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(554, 394);
+            this.tabPage5.Size = new System.Drawing.Size(554, 384);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Inventory";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -674,7 +667,7 @@
             this.dGridInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGridInventory.Location = new System.Drawing.Point(3, 3);
             this.dGridInventory.Name = "dGridInventory";
-            this.dGridInventory.Size = new System.Drawing.Size(548, 388);
+            this.dGridInventory.Size = new System.Drawing.Size(548, 378);
             this.dGridInventory.TabIndex = 0;
             this.dGridInventory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellClick);
             this.dGridInventory.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridInventory_CellEndEdit);
@@ -727,6 +720,13 @@
             // inventoryTableAdapter
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -831,7 +831,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn dGridTypeColumn;
         private System.Windows.Forms.ToolStripMenuItem subracesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addSubraceToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

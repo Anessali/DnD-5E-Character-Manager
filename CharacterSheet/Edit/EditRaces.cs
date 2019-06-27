@@ -12,15 +12,18 @@ namespace CharacterSheet.Edit
 {
     public partial class EditRaces : Form
     {
+        public int fontSize;
         DnDataSetDataContext conn = new DnDataSetDataContext();
-        public EditRaces()
+
+        public EditRaces(int fontSize)
         {
+            this.fontSize = fontSize;
             InitializeComponent();
         }
-        
-        private void Races_Load(object sender, EventArgs e)
+
+        private void EditRaces_Load(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(fontSize);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -30,41 +33,45 @@ namespace CharacterSheet.Edit
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             //MessageBox.Show(dGridRaces.SelectedRows[0].Cells[0].Value.ToString());
             if (dGridRaces.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Are you sure you wish to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    EditRaces newWindow = new EditRaces(fontSize);
                     int raceId = Convert.ToInt32(dGridRaces.SelectedRows[0].Cells[0].Value);
                     Race obj = conn.Races.SingleOrDefault(E => E.Id == raceId);
                     conn.Races.DeleteOnSubmit(obj);
                     conn.SubmitChanges();
-                    LoadData();
+                    this.Close();
+                    newWindow.Show();
                 }
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddRace window = new AddRace();
-            this.Close();
-            window.ShowDialog();
-            
-            //LoadData();
+            AddRace window = new AddRace(fontSize);
+            if (window.ShowDialog() == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         /// <summary>
         /// Used to load data on DataGrid
         /// </summary>
-        private void LoadData()
+        private void LoadData(int fontSize)
         {
+            dGridRaces.RowTemplate.Height = fontSize * 2 + 8;
+            dGridRaces.DefaultCellStyle.Font = new Font("Arial", fontSize);
             dGridRaces.DataSource = conn.Races;
             dGridRaces.Sort(dGridNameColumn, ListSortDirection.Ascending);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            EditRaces newWindow = new EditRaces(fontSize);
             //MessageBox.Show(dGridRaces.SelectedRows[0].Cells[1].Value.ToString());
             AddRace f = new AddRace(true, Convert.ToInt32(dGridRaces.SelectedRows[0].Cells[0].Value));
             f.ButtonText = "Update";
@@ -76,8 +83,10 @@ namespace CharacterSheet.Edit
             f.Wis = dGridRaces.SelectedRows[0].Cells[7].Value.ToString();
             f.Cha = dGridRaces.SelectedRows[0].Cells[8].Value.ToString();
             f.ShowDialog();
-            LoadData();
-            
+            this.Close();
+            newWindow.Show();
         }
+
+        
     }
 }

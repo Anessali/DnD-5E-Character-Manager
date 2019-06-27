@@ -56,7 +56,7 @@ namespace CharacterSheet.Edit
         {
             if (txtName.Text == "" || cbBoxRace.Text == "")
             {
-                MessageBox.Show("Missing required data");
+                MessageBox.Show("Missing required information");
             }
             else
             {
@@ -128,6 +128,7 @@ namespace CharacterSheet.Edit
                         MessageBox.Show($"Error: {exc}");
                     }
                 }
+                DialogResult = DialogResult.OK;
             }
         }
 

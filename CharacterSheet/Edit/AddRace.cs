@@ -14,13 +14,15 @@ namespace CharacterSheet.Edit
 {
     public partial class AddRace : Form
     {
+        int fontSize;
         bool beingEdited = false;
         int raceID;
-        DnDataDataSet db;
+        //DnDataDataSet db;
 
-        public AddRace()
+        public AddRace(int fontSize)
         {
             InitializeComponent();
+            this.fontSize = fontSize;
         }
 
         public AddRace(bool beingEdited, int raceID)
@@ -30,6 +32,11 @@ namespace CharacterSheet.Edit
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Adds a new race using query. Will close the original Edit Races window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click_1(object sender, EventArgs e)
         {
             //For more information: https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/how-to-connect-to-a-database
@@ -41,7 +48,7 @@ namespace CharacterSheet.Edit
             }
             else
             {
-                EditRaces n = new EditRaces();
+                EditRaces n = new EditRaces(fontSize);
                 if (beingEdited == false)
                 {
                     Race race = new Race
@@ -51,7 +58,7 @@ namespace CharacterSheet.Edit
                         Dexterity = Convert.ToInt32(txtDex.Text),
                         Constitution = Convert.ToInt32(txtCon.Text),
                         Intelligence = Convert.ToInt32(txtInt.Text),
-                        Wisdom = Convert.ToInt32(txtWis.Text),
+                        Wisdom = Convert.ToInt32(txtWis.Text), 
                         Charisma = Convert.ToInt32(txtCha.Text)
                     };
 
@@ -83,14 +90,14 @@ namespace CharacterSheet.Edit
                     try
                     {
                         db.SubmitChanges();
-                        n.Show();
                         this.Close();
                     }
                     catch (Exception exc)
                     {
                         MessageBox.Show($"Error: {exc}");
                     }
-                }    
+                }
+                DialogResult = DialogResult.OK;
             }
         }
 

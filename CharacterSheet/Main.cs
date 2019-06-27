@@ -16,13 +16,14 @@ namespace CharacterSheet
 {
     public partial class Main : Form
     {
+        int fontSize = Convert.ToInt32(XElement.Load("Data/Settings.xml").Element("FontSize").Value);
         private int str,
             dex,
             con,
             intel,
             wis,
             cha;
-        XElement settings = XElement.Load("Data/Settings.xml");
+        
         DnDataSetDataContext db = new DnDataSetDataContext();
         LoadData load = new LoadData();
         Dice dice;
@@ -30,14 +31,10 @@ namespace CharacterSheet
         #region Constructors
         public Main()
         {
-            this.Icon = CharacterSheet.Properties.Resources.Iconcubic_Dnd_Dice_D12
-               ;
+            this.Icon = Properties.Resources.Iconcubic_Dnd_Dice_D12;
             InitializeComponent();
         }
-        public Main(int str)
-        {
-            this.str = str;
-        }
+        
         #endregion
         private void Main_Load(object sender, EventArgs e)
         {
@@ -117,6 +114,14 @@ namespace CharacterSheet
         #endregion
 
         #region toolstrip
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XElement settings = XElement.Load("Data/Settings.xml");
+            
+            //MessageBox.Show(fontSize.ToString());
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -141,7 +146,7 @@ namespace CharacterSheet
 
         private void editRacesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Edit.EditRaces races = new Edit.EditRaces();
+            Edit.EditRaces races = new Edit.EditRaces(fontSize);
             races.Show();
         }
         #endregion
@@ -168,9 +173,6 @@ namespace CharacterSheet
         }
 
         
-
-
-
 
 
         /// <summary>

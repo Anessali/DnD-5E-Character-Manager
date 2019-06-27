@@ -29,44 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dGrid = new System.Windows.Forms.DataGridView();
-            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGridNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dexterityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.constitutionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intelligenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wisdomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charismaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trait1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trait2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trait3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trait4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subracesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.racesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.racesTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.RacesTableAdapter();
-            this.subracesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subracesTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.SubracesTableAdapter();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.trait4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trait3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trait2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trait1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charismaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wisdomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intelligenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.constitutionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dexterityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.strengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dGridNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raceIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subracesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subracesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -109,6 +110,14 @@
             this.trait3DataGridViewTextBoxColumn,
             this.trait4DataGridViewTextBoxColumn});
             this.dGrid.DataSource = this.subracesBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGrid.Location = new System.Drawing.Point(0, 0);
             this.dGrid.Name = "dGrid";
@@ -117,10 +126,121 @@
             this.dGrid.Size = new System.Drawing.Size(348, 341);
             this.dGrid.TabIndex = 0;
             // 
-            // racesBindingSource
+            // idDataGridViewTextBoxColumn
             // 
-            this.racesBindingSource.DataMember = "Races";
-            this.racesBindingSource.DataSource = this.dnDataDataSetBindingSource;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // raceIdDataGridViewTextBoxColumn
+            // 
+            this.raceIdDataGridViewTextBoxColumn.DataPropertyName = "RaceId";
+            this.raceIdDataGridViewTextBoxColumn.HeaderText = "RaceId";
+            this.raceIdDataGridViewTextBoxColumn.Name = "raceIdDataGridViewTextBoxColumn";
+            this.raceIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.raceIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dGridNameColumn
+            // 
+            this.dGridNameColumn.DataPropertyName = "Name";
+            this.dGridNameColumn.HeaderText = "Name";
+            this.dGridNameColumn.Name = "dGridNameColumn";
+            this.dGridNameColumn.ReadOnly = true;
+            // 
+            // speedDataGridViewTextBoxColumn
+            // 
+            this.speedDataGridViewTextBoxColumn.DataPropertyName = "Speed";
+            this.speedDataGridViewTextBoxColumn.HeaderText = "Speed";
+            this.speedDataGridViewTextBoxColumn.Name = "speedDataGridViewTextBoxColumn";
+            this.speedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.speedDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // strengthDataGridViewTextBoxColumn
+            // 
+            this.strengthDataGridViewTextBoxColumn.DataPropertyName = "Strength";
+            this.strengthDataGridViewTextBoxColumn.HeaderText = "Strength";
+            this.strengthDataGridViewTextBoxColumn.Name = "strengthDataGridViewTextBoxColumn";
+            this.strengthDataGridViewTextBoxColumn.ReadOnly = true;
+            this.strengthDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dexterityDataGridViewTextBoxColumn
+            // 
+            this.dexterityDataGridViewTextBoxColumn.DataPropertyName = "Dexterity";
+            this.dexterityDataGridViewTextBoxColumn.HeaderText = "Dexterity";
+            this.dexterityDataGridViewTextBoxColumn.Name = "dexterityDataGridViewTextBoxColumn";
+            this.dexterityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dexterityDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // constitutionDataGridViewTextBoxColumn
+            // 
+            this.constitutionDataGridViewTextBoxColumn.DataPropertyName = "Constitution";
+            this.constitutionDataGridViewTextBoxColumn.HeaderText = "Constitution";
+            this.constitutionDataGridViewTextBoxColumn.Name = "constitutionDataGridViewTextBoxColumn";
+            this.constitutionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.constitutionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // intelligenceDataGridViewTextBoxColumn
+            // 
+            this.intelligenceDataGridViewTextBoxColumn.DataPropertyName = "Intelligence";
+            this.intelligenceDataGridViewTextBoxColumn.HeaderText = "Intelligence";
+            this.intelligenceDataGridViewTextBoxColumn.Name = "intelligenceDataGridViewTextBoxColumn";
+            this.intelligenceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.intelligenceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // wisdomDataGridViewTextBoxColumn
+            // 
+            this.wisdomDataGridViewTextBoxColumn.DataPropertyName = "Wisdom";
+            this.wisdomDataGridViewTextBoxColumn.HeaderText = "Wisdom";
+            this.wisdomDataGridViewTextBoxColumn.Name = "wisdomDataGridViewTextBoxColumn";
+            this.wisdomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wisdomDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // charismaDataGridViewTextBoxColumn
+            // 
+            this.charismaDataGridViewTextBoxColumn.DataPropertyName = "Charisma";
+            this.charismaDataGridViewTextBoxColumn.HeaderText = "Charisma";
+            this.charismaDataGridViewTextBoxColumn.Name = "charismaDataGridViewTextBoxColumn";
+            this.charismaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.charismaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trait1DataGridViewTextBoxColumn
+            // 
+            this.trait1DataGridViewTextBoxColumn.DataPropertyName = "Trait1";
+            this.trait1DataGridViewTextBoxColumn.HeaderText = "Trait1";
+            this.trait1DataGridViewTextBoxColumn.Name = "trait1DataGridViewTextBoxColumn";
+            this.trait1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.trait1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trait2DataGridViewTextBoxColumn
+            // 
+            this.trait2DataGridViewTextBoxColumn.DataPropertyName = "Trait2";
+            this.trait2DataGridViewTextBoxColumn.HeaderText = "Trait2";
+            this.trait2DataGridViewTextBoxColumn.Name = "trait2DataGridViewTextBoxColumn";
+            this.trait2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.trait2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trait3DataGridViewTextBoxColumn
+            // 
+            this.trait3DataGridViewTextBoxColumn.DataPropertyName = "Trait3";
+            this.trait3DataGridViewTextBoxColumn.HeaderText = "Trait3";
+            this.trait3DataGridViewTextBoxColumn.Name = "trait3DataGridViewTextBoxColumn";
+            this.trait3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.trait3DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trait4DataGridViewTextBoxColumn
+            // 
+            this.trait4DataGridViewTextBoxColumn.DataPropertyName = "Trait4";
+            this.trait4DataGridViewTextBoxColumn.HeaderText = "Trait4";
+            this.trait4DataGridViewTextBoxColumn.Name = "trait4DataGridViewTextBoxColumn";
+            this.trait4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.trait4DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // subracesBindingSource
+            // 
+            this.subracesBindingSource.DataMember = "Subraces";
+            this.subracesBindingSource.DataSource = this.dnDataDataSetBindingSource;
             // 
             // dnDataDataSetBindingSource
             // 
@@ -131,6 +251,15 @@
             // 
             this.dnDataDataSet.DataSetName = "DnDataDataSet";
             this.dnDataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(348, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -195,138 +324,18 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // racesBindingSource
+            // 
+            this.racesBindingSource.DataMember = "Races";
+            this.racesBindingSource.DataSource = this.dnDataDataSetBindingSource;
+            // 
             // racesTableAdapter
             // 
             this.racesTableAdapter.ClearBeforeFill = true;
             // 
-            // subracesBindingSource
-            // 
-            this.subracesBindingSource.DataMember = "Subraces";
-            this.subracesBindingSource.DataSource = this.dnDataDataSetBindingSource;
-            // 
             // subracesTableAdapter
             // 
             this.subracesTableAdapter.ClearBeforeFill = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(348, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
-            // 
-            // trait4DataGridViewTextBoxColumn
-            // 
-            this.trait4DataGridViewTextBoxColumn.DataPropertyName = "Trait4";
-            this.trait4DataGridViewTextBoxColumn.HeaderText = "Trait4";
-            this.trait4DataGridViewTextBoxColumn.Name = "trait4DataGridViewTextBoxColumn";
-            this.trait4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.trait4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trait3DataGridViewTextBoxColumn
-            // 
-            this.trait3DataGridViewTextBoxColumn.DataPropertyName = "Trait3";
-            this.trait3DataGridViewTextBoxColumn.HeaderText = "Trait3";
-            this.trait3DataGridViewTextBoxColumn.Name = "trait3DataGridViewTextBoxColumn";
-            this.trait3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.trait3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trait2DataGridViewTextBoxColumn
-            // 
-            this.trait2DataGridViewTextBoxColumn.DataPropertyName = "Trait2";
-            this.trait2DataGridViewTextBoxColumn.HeaderText = "Trait2";
-            this.trait2DataGridViewTextBoxColumn.Name = "trait2DataGridViewTextBoxColumn";
-            this.trait2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.trait2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trait1DataGridViewTextBoxColumn
-            // 
-            this.trait1DataGridViewTextBoxColumn.DataPropertyName = "Trait1";
-            this.trait1DataGridViewTextBoxColumn.HeaderText = "Trait1";
-            this.trait1DataGridViewTextBoxColumn.Name = "trait1DataGridViewTextBoxColumn";
-            this.trait1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.trait1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // charismaDataGridViewTextBoxColumn
-            // 
-            this.charismaDataGridViewTextBoxColumn.DataPropertyName = "Charisma";
-            this.charismaDataGridViewTextBoxColumn.HeaderText = "Charisma";
-            this.charismaDataGridViewTextBoxColumn.Name = "charismaDataGridViewTextBoxColumn";
-            this.charismaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.charismaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // wisdomDataGridViewTextBoxColumn
-            // 
-            this.wisdomDataGridViewTextBoxColumn.DataPropertyName = "Wisdom";
-            this.wisdomDataGridViewTextBoxColumn.HeaderText = "Wisdom";
-            this.wisdomDataGridViewTextBoxColumn.Name = "wisdomDataGridViewTextBoxColumn";
-            this.wisdomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wisdomDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // intelligenceDataGridViewTextBoxColumn
-            // 
-            this.intelligenceDataGridViewTextBoxColumn.DataPropertyName = "Intelligence";
-            this.intelligenceDataGridViewTextBoxColumn.HeaderText = "Intelligence";
-            this.intelligenceDataGridViewTextBoxColumn.Name = "intelligenceDataGridViewTextBoxColumn";
-            this.intelligenceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.intelligenceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // constitutionDataGridViewTextBoxColumn
-            // 
-            this.constitutionDataGridViewTextBoxColumn.DataPropertyName = "Constitution";
-            this.constitutionDataGridViewTextBoxColumn.HeaderText = "Constitution";
-            this.constitutionDataGridViewTextBoxColumn.Name = "constitutionDataGridViewTextBoxColumn";
-            this.constitutionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.constitutionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dexterityDataGridViewTextBoxColumn
-            // 
-            this.dexterityDataGridViewTextBoxColumn.DataPropertyName = "Dexterity";
-            this.dexterityDataGridViewTextBoxColumn.HeaderText = "Dexterity";
-            this.dexterityDataGridViewTextBoxColumn.Name = "dexterityDataGridViewTextBoxColumn";
-            this.dexterityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dexterityDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // strengthDataGridViewTextBoxColumn
-            // 
-            this.strengthDataGridViewTextBoxColumn.DataPropertyName = "Strength";
-            this.strengthDataGridViewTextBoxColumn.HeaderText = "Strength";
-            this.strengthDataGridViewTextBoxColumn.Name = "strengthDataGridViewTextBoxColumn";
-            this.strengthDataGridViewTextBoxColumn.ReadOnly = true;
-            this.strengthDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // speedDataGridViewTextBoxColumn
-            // 
-            this.speedDataGridViewTextBoxColumn.DataPropertyName = "Speed";
-            this.speedDataGridViewTextBoxColumn.HeaderText = "Speed";
-            this.speedDataGridViewTextBoxColumn.Name = "speedDataGridViewTextBoxColumn";
-            this.speedDataGridViewTextBoxColumn.ReadOnly = true;
-            this.speedDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dGridNameColumn
-            // 
-            this.dGridNameColumn.DataPropertyName = "Name";
-            this.dGridNameColumn.HeaderText = "Name";
-            this.dGridNameColumn.Name = "dGridNameColumn";
-            this.dGridNameColumn.ReadOnly = true;
-            // 
-            // raceIdDataGridViewTextBoxColumn
-            // 
-            this.raceIdDataGridViewTextBoxColumn.DataPropertyName = "RaceId";
-            this.raceIdDataGridViewTextBoxColumn.HeaderText = "RaceId";
-            this.raceIdDataGridViewTextBoxColumn.Name = "raceIdDataGridViewTextBoxColumn";
-            this.raceIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.raceIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // EditSubraces
             // 
@@ -344,11 +353,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subracesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dnDataDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.subracesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.racesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

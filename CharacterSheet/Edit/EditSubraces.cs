@@ -12,7 +12,7 @@ namespace CharacterSheet.Edit
 {
     public partial class EditSubraces : Form
     {
-        DnDataSetDataContext db = new DnDataSetDataContext();
+        DnDataSetDataContext conn = new DnDataSetDataContext();
         public EditSubraces()
         {
             InitializeComponent();
@@ -20,8 +20,8 @@ namespace CharacterSheet.Edit
         
         private void Races_Load(object sender, EventArgs e)
         {
-            dGrid.DataSource = db.Subraces;
-            //dGridRaces.Sort(dGridNameColumn, ListSortDirection.Ascending);
+            dGrid.DataSource = conn.Subraces;
+            dGrid.Sort(dGridNameColumn, ListSortDirection.Ascending);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -31,24 +31,29 @@ namespace CharacterSheet.Edit
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            //MessageBox.Show(dGridRaces.SelectedRows[0].Cells[0].Value.ToString());
             if (dGrid.SelectedRows.Count > 0)
             {
                 if (MessageBox.Show("Are you sure you wish to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int raceId = Convert.ToInt32(dGrid.SelectedRows[0].Cells[0].Value);
-                    Race obj = db.Races.SingleOrDefault(E => E.Id == raceId);
-                    db.Races.DeleteOnSubmit(obj);
-                    db.SubmitChanges();
+                    Subrace obj = conn.Subraces.SingleOrDefault(E => E.Id == raceId);
+                    conn.Subraces.DeleteOnSubmit(obj);
+                    conn.SubmitChanges();
                 }
             }
+            LoadData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddSubrace window = new AddSubrace();
-            window.ShowDialog();
+            EditSubraces newWindow = new EditSubraces();
+            this.Close();
+            if (window.ShowDialog() == DialogResult.OK) {
+                
+                newWindow.Show();
+            }
+            //LoadData();
         }
 
         /// <summary>
@@ -56,7 +61,9 @@ namespace CharacterSheet.Edit
         /// </summary>
         private void LoadData()
         {
-            
+            MessageBox.Show("Load Test");
+            dGrid.DataSource = conn.Subraces;
+            dGrid.Sort(dGridNameColumn, ListSortDirection.Ascending);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -66,7 +73,7 @@ namespace CharacterSheet.Edit
             string name = "";
             LoadData load = new LoadData();
 
-            var query = from race in db.Races
+            var query = from race in conn.Races
                         where race.Id == raceId
                         select race.Name;
 
