@@ -116,11 +116,14 @@ namespace CharacterSheet
 
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Edit.Settings newWindow = new Edit.Settings();
+            newWindow.ShowDialog();
+
+
+
+
             //XElement settings = XElement.Load("Data/Settings.xml");
-
-
-
-
+                                 
             /* Some example code for personal use. Generates an XML document using Linq to XML
             XDocument newDoc = new XDocument(
                 new XDeclaration("1.0", "utf-8", "yes"),
