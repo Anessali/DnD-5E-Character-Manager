@@ -61,7 +61,6 @@ namespace CharacterSheet
             set { str = value; }
         }
 
-        
         public int Dex { get => dex; set => dex = value; }
         public int Con { get => con; set => con = value; }
         public int Intel { get => intel; set => intel = value; }
@@ -117,8 +116,33 @@ namespace CharacterSheet
 
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            XElement settings = XElement.Load("Data/Settings.xml");
-            
+            //XElement settings = XElement.Load("Data/Settings.xml");
+
+
+
+
+            /* Some example code for personal use. Generates an XML document using Linq to XML
+            XDocument newDoc = new XDocument(
+                new XDeclaration("1.0", "utf-8", "yes"),
+                new XComment("Creating example XML doc"),
+                new XElement("Animals",
+                    new XElement("Animal", new XAttribute("Id", 101),
+                        new XElement("Name", "Cat"),
+                        new XElement("Species", "Cat")
+                        )
+                    )
+                );
+             
+            newDoc.Save(@"Data\Example.xml");   
+             */
+            /* Updating an xml element
+                xmlDoc.Element("Students")
+                      .Elements("Student")
+                      .Where(x => x.Attribute("Id").Value == "106")
+                      .Select(x => x.Element("TotalMarks")).FirstOrDefault().SetValue(999);
+                
+            */
+
             //MessageBox.Show(fontSize.ToString());
         }
 
@@ -169,11 +193,8 @@ namespace CharacterSheet
 
         private void dGridInventory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
-
-        
-
 
         /// <summary>
         /// Runs constantly. Possibly slowing application
