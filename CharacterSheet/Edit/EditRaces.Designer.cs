@@ -305,7 +305,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "EditRaces";
             this.Text = "Races";
-            this.Load += new System.EventHandler(this.EditRaces_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

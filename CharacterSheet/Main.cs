@@ -16,7 +16,7 @@ namespace CharacterSheet
 {
     public partial class Main : Form
     {
-        int fontSize = Convert.ToInt32(XElement.Load("Data/Settings.xml").Element("FontSize").Value);
+        int fontSize;
         private int str,
             dex,
             con,
@@ -31,8 +31,10 @@ namespace CharacterSheet
         #region Constructors
         public Main()
         {
+            var settings = XElement.Load("Data/Settings.xml");
             this.Icon = Properties.Resources.Iconcubic_Dnd_Dice_D12;
             InitializeComponent();
+            this.fontSize = Convert.ToInt32(settings.Element("FontSize").Value);
         }
         
         #endregion
@@ -119,9 +121,6 @@ namespace CharacterSheet
             Edit.Settings newWindow = new Edit.Settings();
             newWindow.ShowDialog();
 
-
-
-
             //XElement settings = XElement.Load("Data/Settings.xml");
                                  
             /* Some example code for personal use. Generates an XML document using Linq to XML
@@ -161,7 +160,7 @@ namespace CharacterSheet
         /// <param name="e"></param>
         private void subracesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Edit.EditSubraces window = new Edit.EditSubraces();
+            Edit.EditSubraces window = new Edit.EditSubraces(fontSize);
             window.Show();
         }
 

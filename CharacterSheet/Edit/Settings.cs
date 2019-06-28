@@ -15,7 +15,11 @@ namespace CharacterSheet.Edit
     {
         public Settings()
         {
+            //MessageBox.Show(XElement.Load("Data/Settings.xml").Element("FontSize").Value);
+            
             InitializeComponent();
+            string fontSize = XElement.Load("Data/Settings.xml").Element("FontSize").Value;
+            numFontSize.Text = fontSize.ToString();
         }
 
         private void SplitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -31,12 +35,10 @@ namespace CharacterSheet.Edit
         private void BtnSave_Click(object sender, EventArgs e)
         {
             XElement appSettings = XElement.Load(@"Data\Settings.xml");
-            var settingDetails = from settings in appSettings.Elements("Settings")
-                                 select settings;
-            MessageBox.Show(settingDetails.First().Element("FontSize").Value);
-            //settingDetails.First().Element("FontSize").Value = numFontSize.Text;
-            //appSettings.Save(@"Data\Settings.xml");
+            appSettings.Element("FontSize").Value = numFontSize.Text;
+            appSettings.Save(@"Data\Settings.xml");
             this.Close();
+            MessageBox.Show("Application will need to be restarted for changes to take affect.");
         }
     }
 }

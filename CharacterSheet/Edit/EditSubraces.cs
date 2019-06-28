@@ -12,16 +12,18 @@ namespace CharacterSheet.Edit
 {
     public partial class EditSubraces : Form
     {
+        int fontSize;
         DnDataSetDataContext conn = new DnDataSetDataContext();
-        public EditSubraces()
+        public EditSubraces(int fontSize)
         {
+            this.fontSize = fontSize;
             InitializeComponent();
+            LoadData(fontSize);
         }
         
         private void Races_Load(object sender, EventArgs e)
         {
-            dGrid.DataSource = conn.Subraces;
-            dGrid.Sort(dGridNameColumn, ListSortDirection.Ascending);
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,13 +43,13 @@ namespace CharacterSheet.Edit
                     conn.SubmitChanges();
                 }
             }
-            LoadData();
+            LoadData(fontSize);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddSubrace window = new AddSubrace();
-            EditSubraces newWindow = new EditSubraces();
+            EditSubraces newWindow = new EditSubraces(fontSize);
             this.Close();
             if (window.ShowDialog() == DialogResult.OK) {
                 
@@ -59,9 +61,10 @@ namespace CharacterSheet.Edit
         /// <summary>
         /// Used to load data on DataGrid
         /// </summary>
-        private void LoadData()
+        private void LoadData(int fontSize)
         {
-            MessageBox.Show("Load Test");
+            dGrid.RowTemplate.Height = fontSize * 2 + 8;
+            dGrid.DefaultCellStyle.Font = new Font("Arial", fontSize);
             dGrid.DataSource = conn.Subraces;
             dGrid.Sort(dGridNameColumn, ListSortDirection.Ascending);
         }

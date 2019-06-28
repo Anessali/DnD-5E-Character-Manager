@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CharacterSheet.Edit
 {
@@ -19,10 +20,6 @@ namespace CharacterSheet.Edit
         {
             this.fontSize = fontSize;
             InitializeComponent();
-        }
-
-        private void EditRaces_Load(object sender, EventArgs e)
-        {
             LoadData(fontSize);
         }
 
@@ -38,13 +35,24 @@ namespace CharacterSheet.Edit
             {
                 if (MessageBox.Show("Are you sure you wish to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    EditRaces newWindow = new EditRaces(fontSize);
-                    int raceId = Convert.ToInt32(dGridRaces.SelectedRows[0].Cells[0].Value);
-                    Race obj = conn.Races.SingleOrDefault(E => E.Id == raceId);
-                    conn.Races.DeleteOnSubmit(obj);
-                    conn.SubmitChanges();
-                    this.Close();
-                    newWindow.Show();
+                    try
+                    {
+                        EditRaces newWindow = new EditRaces(fontSize);
+                        int raceId = Convert.ToInt32(dGridRaces.SelectedRows[0].Cells[0].Value);
+                        Race obj = conn.Races.SingleOrDefault(E => E.Id == raceId);
+                        conn.Races.DeleteOnSubmit(obj);
+                        conn.SubmitChanges();
+                        this.Close();
+                        newWindow.Show();
+                    }
+                    catch(SqlException)
+                    {
+                        MessageBox.Show("Cannot delete. Subraces exist using this race.");
+                    }
+                    catch(Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString());
+                    }
                 }
             }
         }
