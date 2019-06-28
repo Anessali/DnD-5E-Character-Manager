@@ -17,6 +17,7 @@ namespace CharacterSheet
     public partial class Main : Form
     {
         int fontSize;
+        string characterSheet;
         private int str,
             dex,
             con,
@@ -31,10 +32,26 @@ namespace CharacterSheet
         #region Constructors
         public Main()
         {
-            var settings = XElement.Load("Data/Settings.xml");
-            this.Icon = Properties.Resources.Iconcubic_Dnd_Dice_D12;
             InitializeComponent();
-            this.fontSize = Convert.ToInt32(settings.Element("FontSize").Value);
+            this.Icon = Properties.Resources.Iconcubic_Dnd_Dice_D12;
+
+            try
+            {
+                var settings = XElement.Load("Data/Settings.xml");
+                this.fontSize = Convert.ToInt32(settings.Element("FontSize").Value);
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                MessageBox.Show("Settings file not found. Generating new one...");
+                XDocument newDoc = new XDocument(
+                    new XDeclaration("1.0", "utf-8", "yes"),
+                    new XElement("Settings",
+                        new XElement("FontSize", "14")
+                    )
+                );
+
+                newDoc.Save(@"Data\Settings.xml");
+            }
         }
         
         #endregion
@@ -194,6 +211,16 @@ namespace CharacterSheet
         }
 
         private void dGridInventory_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditCharacterToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

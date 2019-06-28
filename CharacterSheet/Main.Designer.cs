@@ -33,6 +33,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,7 @@
             this.d4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attributeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabCharacter = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.cbBoxSubrace = new System.Windows.Forms.ComboBox();
@@ -92,10 +93,10 @@
             this.dnDataDataSet = new CharacterSheet.DnDataDataSet();
             this.dnDataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryTableAdapter = new CharacterSheet.DnDataDataSetTableAdapters.InventoryTableAdapter();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabSpells = new System.Windows.Forms.TabPage();
             this.charSheetMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabCharacter.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -142,12 +143,20 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.newToolStripMenuItem.Text = "New";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -173,8 +182,9 @@
             // editCharacterToolStripMenuItem
             // 
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
-            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editCharacterToolStripMenuItem.Text = "Character";
+            this.editCharacterToolStripMenuItem.Click += new System.EventHandler(this.EditCharacterToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -276,9 +286,10 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabCharacter);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabSpells);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -288,21 +299,21 @@
             this.tabControl1.Size = new System.Drawing.Size(562, 417);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage1
+            // tabCharacter
             // 
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.cbBoxSubrace);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.cbBoxRace);
-            this.tabPage1.Controls.Add(this.lblSubrace);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(554, 384);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Character";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabCharacter.Controls.Add(this.label9);
+            this.tabCharacter.Controls.Add(this.button1);
+            this.tabCharacter.Controls.Add(this.cbBoxSubrace);
+            this.tabCharacter.Controls.Add(this.label2);
+            this.tabCharacter.Controls.Add(this.cbBoxRace);
+            this.tabCharacter.Controls.Add(this.lblSubrace);
+            this.tabCharacter.Location = new System.Drawing.Point(4, 29);
+            this.tabCharacter.Name = "tabCharacter";
+            this.tabCharacter.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCharacter.Size = new System.Drawing.Size(554, 384);
+            this.tabCharacter.TabIndex = 0;
+            this.tabCharacter.Text = "Character";
+            this.tabCharacter.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -721,12 +732,16 @@
             // 
             this.inventoryTableAdapter.ClearBeforeFill = true;
             // 
-            // settingsToolStripMenuItem
+            // tabSpells
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
+            this.tabSpells.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.tabSpells.Location = new System.Drawing.Point(4, 29);
+            this.tabSpells.Name = "tabSpells";
+            this.tabSpells.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSpells.Size = new System.Drawing.Size(554, 384);
+            this.tabSpells.TabIndex = 5;
+            this.tabSpells.Text = "Spells";
+            this.tabSpells.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -744,8 +759,8 @@
             this.charSheetMenu.ResumeLayout(false);
             this.charSheetMenu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabCharacter.ResumeLayout(false);
+            this.tabCharacter.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -780,7 +795,7 @@
         private System.Windows.Forms.ToolStripMenuItem d6ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem d4ToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabCharacter;
         private System.Windows.Forms.Label lblSubrace;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage2;
@@ -832,6 +847,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dGridTypeColumn;
         private System.Windows.Forms.ToolStripMenuItem subracesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabSpells;
     }
 }
 
