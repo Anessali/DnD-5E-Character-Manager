@@ -22,13 +22,13 @@ namespace CharacterSheet.StatWindows
         private void btnSetAttributes_Click(object sender, EventArgs e)
         {
             Main window = new Main();
-            window.Str = Int32.Parse(txtStr.Text);
+            //window.Str = Int32.Parse(txtStr.Text);
             //window.Dex = Int32.Parse(txtDex.Text);
             //window.Con = Int32.Parse(txtCon.Text);
             //window.Intel = Int32.Parse(txtInt.Text);
             //window.Wis = Int32.Parse(txtWis.Text);
             //window.Cha = Int32.Parse(txtCha.Text);
-            window.ReloadData();
+            window.LoadData();
             this.Close();
         }
 

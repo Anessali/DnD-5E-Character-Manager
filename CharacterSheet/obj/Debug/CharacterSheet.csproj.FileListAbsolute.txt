@@ -156,4 +156,5 @@ D:\Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Character
 D:\Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.exe
 D:\Drive\Programming\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.pdb
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.Settings.resources
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\3Settings.xml
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Edit.Character.resources
+C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\bin\Debug\Data\Settings.xml

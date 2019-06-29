@@ -248,7 +248,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SetAttributes";
             this.Text = "SetAttributes";
-            this.Load += new System.EventHandler(this.SetAttributes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

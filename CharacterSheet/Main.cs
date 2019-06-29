@@ -30,6 +30,10 @@ namespace CharacterSheet
         Dice dice;
 
         #region Constructors
+
+        /// <summary>
+        /// Main constructor where everything is loaded.
+        /// </summary>
         public Main()
         {
             InitializeComponent();
@@ -52,39 +56,13 @@ namespace CharacterSheet
 
                 newDoc.Save(@"Data\Settings.xml");
             }
-        }
-        
-        #endregion
-        private void Main_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dnDataDataSet.Inventory' table. You can move, or remove it, as needed.
-            this.inventoryTableAdapter.Fill(this.dnDataDataSet.Inventory);
-            dGridTypeColumn.Sorted = true;
 
-            //loads in data from LoadRaces class
-            cbBoxRace = load.Races(cbBoxRace);
+            LoadData();
+
+            //loads in data from LoadRaces class - pulls from LoadData.cs
+            //cbBoxRace = load.Races(cbBoxRace);
         }
 
-        /// <summary>
-        /// Sets values on page set on another form
-        /// </summary>
-        public void ReloadData()
-        {
-            MessageBox.Show(str.ToString());
-            lblStr.Text = str.ToString();
-        }
-
-        #region Getters/setters for attributes
-        public int Str {
-            get { return str; }
-            set { str = value; }
-        }
-
-        public int Dex { get => dex; set => dex = value; }
-        public int Con { get => con; set => con = value; }
-        public int Intel { get => intel; set => intel = value; }
-        public int Wis { get => wis; set => wis = value; }
-        public int Cha { get => cha; set => cha = value; }
         #endregion
 
         #region Dice Rolling
@@ -170,11 +148,6 @@ namespace CharacterSheet
             this.Close();
         }
 
-        /// <summary>
-        /// Edit subraces
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void subracesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Edit.EditSubraces window = new Edit.EditSubraces(fontSize);
@@ -194,34 +167,12 @@ namespace CharacterSheet
         }
         #endregion
 
-
         #region Inventory DataGrid
 
         private void dGridInventory_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //Table<Inventory> inventory = conn.GetTable<Inventory>();
             UpdateInventory();
-
-        }
-
-        private void dGridInventory_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
-            
-        }
-
-        private void dGridInventory_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditCharacterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -236,7 +187,6 @@ namespace CharacterSheet
         }
         #endregion
 
-
         #region void methods that run repetitive code
         
         public void UpdateInventory()
@@ -247,28 +197,34 @@ namespace CharacterSheet
                 this.inventoryBindingSource.EndEdit();
                 this.inventoryTableAdapter.Update(this.dnDataDataSet.Inventory);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Update failed: {ex}");
             }
         }
 
+        public void LoadData()
+        {
+            // TODO: This line of code loads data into the 'dnDataDataSet.Inventory' table. You can move, or remove it, as needed.
+            this.inventoryTableAdapter.Fill(this.dnDataDataSet.Inventory);
+            dGridTypeColumn.Sorted = true;
+        }
         #endregion
 
         private void cbBoxRace_TextChanged(object sender, EventArgs e)
         {
             //First clears the combo box
-            cbBoxSubrace.Items.Clear();
+            //cbBoxSubrace.Items.Clear();
 
-            var raceQuery = from race in db.Races
-                            join subrace in db.Subraces on race.Id equals subrace.RaceId
-                            where race.Name == cbBoxRace.Text
-                            select subrace.Name
-                            ;
-            foreach (string subrace in raceQuery )
-            {
-                cbBoxSubrace.Items.Add(subrace);
-            }
+            //var raceQuery = from race in db.Races
+            //                join subrace in db.Subraces on race.Id equals subrace.RaceId
+            //                where race.Name == cbBoxRace.Text
+            //                select subrace.Name
+            //                ;
+            //foreach (string subrace in raceQuery )
+            //{
+            //    cbBoxSubrace.Items.Add(subrace);
+            //}
         }
 
         private void btnSetAttributes_Click(object sender, EventArgs e)
@@ -281,11 +237,6 @@ namespace CharacterSheet
                 cha = Int32.Parse(lblCha.Text);
             StatWindows.SetAttributes newWindow = new StatWindows.SetAttributes(str, dex, con, intel, wis, cha);
             newWindow.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ReloadData();
         }
     }
 }

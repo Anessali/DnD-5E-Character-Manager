@@ -1,0 +1,11 @@
+﻿Character editing window needs the following:
+
+1. A main tab. This should include:
+	* Name
+	* Race/Subrace
+	* Description
+
+
+
+
+
