@@ -18,12 +18,6 @@ namespace CharacterSheet
     {
         int fontSize;
         string characterSheet;
-        private int str,
-            dex,
-            con,
-            intel,
-            wis,
-            cha;
         
         DnDataSetDataContext db = new DnDataSetDataContext();
         LoadData load = new LoadData();
@@ -174,6 +168,12 @@ namespace CharacterSheet
             //Table<Inventory> inventory = conn.GetTable<Inventory>();
             UpdateInventory();
 
+        }
+
+        private void EditCharacterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Edit.Character newWindow = new Edit.Character();
+            newWindow.ShowDialog();
         }
 
         /// <summary>
