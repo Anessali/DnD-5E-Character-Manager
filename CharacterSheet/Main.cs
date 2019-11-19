@@ -17,7 +17,7 @@ namespace CharacterSheet
     public partial class Main : Form
     {
         int fontSize;
-        string characterSheet;
+        //string characterSheet;
         
         DnDataSetDataContext db = new DnDataSetDataContext();
         LoadData load = new LoadData();

@@ -43,7 +43,6 @@ C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\Charact
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Main.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.Properties.Resources.resources
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.csproj.GenerateResource.cache
-C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.csproj.CoreCompileInputs.cache
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.exe
 C:\Users\Shiro\Desktop\DnD-5E-Character-Manager\CharacterSheet\obj\Debug\CharacterSheet.pdb
 C:\Users\Shiro\Desktop\CharacterSheet\CharacterSheet\bin\Debug\CharacterSheets\Example.xml
